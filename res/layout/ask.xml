@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	 <LinearLayout
+        android:id="@+id/ask_menu1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffaec9"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/ask_editText_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoText="true"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="4dp"
+            android:ems="10"
+            android:hint="search!"
+            android:singleLine="true" >
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/ask_imageButton_massege"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#00000000"
+            android:src="@drawable/massege" />
+       
+    </LinearLayout>
+    
+	 <LinearLayout
+	    android:id="@+id/ask_menu2"
+	    android:layout_width="fill_parent"
+	    android:layout_height="45dp"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentBottom="true"
+	    android:background="#ffffff"
+	    android:orientation="vertical"
+	     >
+
+		<LinearLayout
+	    	android:id="@+id/ask_menu2_1"
+	    	android:layout_gravity="center_horizontal"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_alignParentLeft="true"
+	    	android:layout_alignParentRight="true"
+	    	android:orientation="horizontal" 
+	    >
+
+	    <ImageButton
+	        android:id="@+id/ask_imageButton_home"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/home1" />
+
+	    <ImageButton
+	        android:id="@+id/ask_imageButton_ask"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/ask" />
+
+	    <ImageButton
+	        android:id="@+id/ask_imageButton_sale"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/sale1" />
+
+	    <ImageButton
+	        android:id="@+id/ask_imageButton_create"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/create1" />
+
+	    <ImageButton
+	        android:id="@+id/ask_imageButton_myself"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/myself1" />
+	</LinearLayout>
+
+	<LinearLayout
+	    android:id="@+id/ask_menu2_2"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+	    <TextView
+	        android:id="@+id/ask_textView_home"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="0.52"
+	        android:gravity="center"
+	        android:text="首页"
+	        android:textSize="15px" />
+
+	    <TextView
+	        android:id="@+id/ask_textView_ask"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="0.74"
+	        android:gravity="center"
+	        android:text="求"
+	        android:textSize="15px" />
+
+	    <TextView
+	        android:id="@+id/ask_textView_sale"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="0.60"
+	        android:gravity="center"
+	        android:text="卖"
+	        android:textSize="15px" />
+
+	    <TextView
+	        android:id="@+id/ask_textView_create"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="0.69"
+	        android:gravity="center"
+	        android:text="创"
+	        android:textSize="15px" />
+
+	    <TextView
+	        android:id="@+id/ask_textView_myself"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:gravity="center"
+	        android:layout_weight="0.3"
+	        android:text="个人中心"
+	        android:textSize="15px" />
+
+		</LinearLayout>
+	
+    </LinearLayout>
+
+	<ImageView
+	    android:layout_width="fill_parent"
+	    android:layout_height="0.85dp"
+	    android:layout_above="@+id/ask_menu2"
+	    android:layout_alignParentLeft="true"
+	    android:background="#a9b7b7" />
+	
+	<ScrollView
+        android:layout_below="@+id/ask_menu1"
+        android:layout_above="@+id/ask_menu2"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:scrollbars="vertical"
+	    
+	    	>
+	<RelativeLayout 
+	    android:id="@+id/ask_menu3"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_below="@+id/ask_menu1"
+	    >
+	    
+		<RelativeLayout
+	    	android:id="@+id/ask_menu3_1"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="45dp"
+	    	android:layout_alignParentRight="true"
+	    	android:layout_alignParentLeft="true"
+	    	android:background="#ffffff"
+	    	
+
+	    	>
+          
+    		
+			<LinearLayout
+	    		android:id="@+id/ask_menu3_1_1"
+	    		android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+	    		android:layout_alignParentRight="true"
+	    		android:layout_alignParentLeft="true"
+	    		android:layout_marginRight="5dp"
+	    		android:layout_marginLeft="5dp"
+	   	 		android:layout_marginTop="5dp"
+	    		android:orientation="horizontal" >
+
+			<Button
+        			android:id="@+id/ask_button_create"
+        			android:layout_weight="1"
+        			android:layout_width="wrap_content"
+        			android:layout_height="35dp"
+        			android:background="#ffaec9"
+        			android:text="创建一条求的信息" />
+
+    		</LinearLayout>
+    	
+        </RelativeLayout>
+				
+	 	<ImageView
+	    		android:layout_width="fill_parent"
+	   			android:layout_height="0.85dp"
+	    		android:layout_below="@+id/ask_menu3_1"
+	    		android:layout_alignParentLeft="true"
+	    		android:background="#a9b7b7" />
+	 	
+	 	<RelativeLayout
+	    		android:id="@+id/ask_menu3_2"
+	    		android:layout_width="wrap_content"
+	    		android:layout_below="@+id/ask_menu3_1"
+	    		android:layout_height="45dp"
+	   	 		android:layout_alignParentRight="true"
+	    		android:layout_alignParentLeft="true"
+	    		
+	    		 >
+
+				<Button
+		    		android:id="@+id/ask_button_ask1"
+		    		android:layout_width="100dp"
+		    		android:layout_height="35dp"
+		    		android:layout_marginLeft="5dp"
+		    		android:layout_centerVertical="true"
+		    		android:background="#ffaec9"
+		    		android:text="租/借" />
+
+				<Button
+		   	 		android:id="@+id/ask_button_ask2"
+		    		android:layout_width="100dp"
+		    		android:layout_height="35dp"
+		    		android:layout_alignParentRight="true"
+		    		android:layout_centerVertical="true"
+		    		android:layout_marginRight="5dp"
+		    		android:background="#ffaec9"
+		    		android:text="交换" />
+
+				<Button
+				    android:id="@+id/ask_button_ask3"
+				    android:layout_width="100dp"
+				    android:layout_height="35dp"
+				    android:layout_centerHorizontal="true"
+				    android:layout_centerVertical="true"
+				    android:background="#ffaec9"
+				    android:text="买" />
+				
+    		</RelativeLayout>
+    		
+	 	<ImageView
+	    		android:layout_width="fill_parent"
+	   			android:layout_height="0.85dp"
+	    		android:layout_below="@+id/ask_menu3_2"
+	    		android:layout_alignParentLeft="true"
+	    		android:background="#a9b7b7" />
+		
+		<LinearLayout 
+		    android:id="@+id/ask_menu3_3"
+		    android:layout_width="fill_parent"
+		    android:layout_height="30dp"
+		    android:layout_below="@+id/ask_menu3_2"
+		    android:orientation="vertical"
+		    >
+		    <TextView
+    	    	android:id="@+id/ask_textView_hot"
+    	    	android:layout_marginTop="5dp"
+    	    	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+    	    	android:drawableLeft="@drawable/hot"
+    	    	android:layout_gravity="center_horizontal"
+    	    	android:textSize="15dp"
+    	    	android:text="热门信息" />
+		</LinearLayout>
+		
+   		<ImageView
+	    		android:layout_width="fill_parent"
+	   			android:layout_height="0.85dp"
+	    		android:layout_below="@+id/ask_menu3_3"
+	    		android:layout_alignParentLeft="true"
+	    		android:background="#a9b7b7" />
+   		
+   		
+    	<ListView  
+    		android:id="@+id/ask_search_user_list"  
+    		android:layout_width="fill_parent"  
+    		android:layout_height="wrap_content"  
+    		android:layout_below="@+id/ask_menu3_3"
+    		
+    		>
+    		 
+		</ListView> 
+		
+	</RelativeLayout>
+	
+			
+    </ScrollView>
+    
+</RelativeLayout>

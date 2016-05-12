@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+   
+     >
+     <LinearLayout
+        android:id="@+id/home_menu1"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffaec9"
+        android:orientation="horizontal" >
+ 				
+        <EditText
+            android:id="@+id/home_editText_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoText="true"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="4dp"
+            
+            android:ems="10"
+            android:hint="search!"
+            android:singleLine="true"
+             >
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/home_imageButton_massege"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#00000000"
+            android:src="@drawable/massege" />
+       
+    </LinearLayout>
+    
+
+    
+     
+     <LinearLayout
+	    android:id="@+id/home_menu2"
+	    android:layout_width="fill_parent"
+	    android:layout_height="45dp"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentBottom="true"
+	    android:background="#ffffff"
+	    android:orientation="vertical"
+	     >
+
+		<LinearLayout
+	    android:id="@+id/home_menu2_1"
+	    android:layout_gravity="center_horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="5dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentRight="true"
+	    android:orientation="horizontal" 
+	    >
+
+	    <ImageButton
+	        android:id="@+id/home_imageButton_home"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/home" 
+	        android:onClick="submit"/>
+
+	    <ImageButton
+	        android:id="@+id/home_imageButton_ask"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/ask1"
+	        android:onClick="submit" />
+
+	    <ImageButton
+	        android:id="@+id/home_imageButton_sale"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/sale1" 
+	        android:onClick="submit"/>
+
+	    <ImageButton
+	        android:id="@+id/home_imageButton_creat"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/create1" 
+	        android:onClick="submit"/>
+
+	    <ImageButton
+	        android:id="@+id/home_imageButton_myself"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/myself1" 
+	        android:onClick="submit"/>
+	</LinearLayout>
+
+	<LinearLayout
+	    android:id="@+id/home_menu2_2"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+	    <TextView
+	        android:id="@+id/home_textview_home"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="0.52"
+	        android:gravity="center"
+	        android:text="首页"
+	        android:textSize="10dp" />
+
+	    <TextView
+	        android:id="@+id/home_textview_ask"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="0.74"
+	        android:gravity="center"
+	        android:text="求"
+	        android:textSize="10dp" />
+
+	    <TextView
+	        android:id="@+id/home_textview_sale"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="0.60"
+	        android:gravity="center"
+	        android:text="卖"
+	        android:textSize="10dp" />
+
+	    <TextView
+	        android:id="@+id/home_textview_create"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_weight="0.69"
+	        android:gravity="center"
+	        android:text="创"
+	        android:textSize="10dp" />
+
+	    <TextView
+	        android:id="@+id/home_textview_myself"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:gravity="center"
+	        android:layout_weight="0.3"
+	        android:text="个人中心"
+	        android:textSize="10dp" />
+
+		</LinearLayout>
+	
+    </LinearLayout>
+
+	<ImageView
+	    android:layout_width="fill_parent"
+	    android:layout_height="0.85dp"
+	    android:layout_above="@+id/home_menu2"
+	    android:layout_alignParentLeft="true"
+	    android:background="#a9b7b7" />
+	
+	 <ScrollView
+        android:layout_below="@+id/home_menu1"
+        android:layout_above="@+id/home_menu2"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:scrollbars="vertical"
+	    android:fillViewport="true"
+	    	>
+	<RelativeLayout 
+	    android:id="@+id/home_menu3"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_below="@+id/home_menu1"
+	    >
+	    
+		<RelativeLayout
+	    	android:id="@+id/home_menu3_1"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="110dp"
+	    	android:layout_alignParentRight="true"
+	    	android:layout_alignParentLeft="true"
+	    	android:background="#ffffff"
+	    	
+
+	    	>
+            <RelativeLayout
+	    		android:id="@+id/home_menu3_1_1"
+	    		android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+	   	 		android:layout_alignParentRight="true"
+	    		android:layout_alignParentLeft="true"
+	    		android:layout_marginTop="10dp"
+	    		 >
+
+				<Button
+		    		android:id="@+id/home_button_sale"
+		    		android:layout_width="160dp"
+		    		android:layout_height="40dp"
+		    		android:layout_marginLeft="10dp"
+		    		android:background="#ffaec9"
+		    		android:textColor="#ffffff"
+	    			android:textStyle="bold"
+		    		android:text="卖" />
+
+				<Button
+		   	 		android:id="@+id/home_button_ask"
+		    		android:layout_width="160dp"
+		    		android:layout_height="40dp"
+		    		android:layout_alignParentRight="true"
+		    		android:layout_alignParentTop="true"
+		    		android:layout_marginRight="10dp"
+		    		android:textColor="#ffffff"
+	    			android:textStyle="bold"
+		    		android:background="#ffaec9"
+		    		android:text="求" />
+    		</RelativeLayout>
+    		
+			<LinearLayout
+	    		android:id="@+id/home_menu3_1_2"
+	    		android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+	    		android:layout_alignParentRight="true"
+	    		android:layout_alignParentLeft="true"
+	    		android:layout_marginRight="10dp"
+	    		android:layout_marginLeft="10dp"
+	    		android:layout_below="@+id/home_menu3_1_1"
+	   	 		android:layout_marginTop="10dp"
+	    		android:orientation="horizontal" >
+
+			<Button
+        			android:id="@+id/home_button_creat"
+        			android:layout_weight="1"
+        			android:layout_width="wrap_content"
+        			android:layout_height="40dp"
+        			android:background="#ffaec9"
+        			android:textColor="#ffffff"
+	    			android:textStyle="bold"
+        			android:text="创建一条信息" />
+
+    		</LinearLayout>
+    	
+        </RelativeLayout>
+        
+	 	<ImageView
+	    		android:layout_width="fill_parent"
+	   			android:layout_height="0.85dp"
+	    		android:layout_below="@+id/home_menu3_1"
+	    		android:layout_alignParentLeft="true"
+	    		android:background="#a9b7b7" />
+		
+		<LinearLayout 
+		    android:id="@+id/home_menu3_2"
+		    android:layout_width="fill_parent"
+		    android:layout_height="30dp"
+		    android:layout_below="@+id/home_menu3_1"
+		    android:orientation="vertical"
+		    >
+		    <TextView
+    	    	android:id="@+id/home_textview_hot"
+    	    	android:layout_marginTop="5dp"
+    	    	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+    	    	android:drawableLeft="@drawable/hot"
+    	    	android:layout_gravity="center_horizontal"
+    	    	android:textSize="13dp"
+    	    	android:text="热门信息" />
+		</LinearLayout>
+		
+   		<ImageView
+	    		android:layout_width="fill_parent"
+	   			android:layout_height="0.85dp"
+	    		android:layout_below="@+id/home_menu3_2"
+	    		android:layout_alignParentLeft="true"
+	    		android:background="#a9b7b7" />
+
+   		
+    	<com.example.layout.ListViewForScrollView  
+    		android:id="@+id/home_search_user_list"  
+    		android:layout_width="fill_parent"  
+    		android:layout_height="fill_parent"  
+    		android:layout_below="@+id/home_menu3_2"
+    		>
+		</com.example.layout.ListViewForScrollView> 
+		
+	</RelativeLayout>
+			
+    </ScrollView>
+
+</RelativeLayout>
