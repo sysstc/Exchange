@@ -1,41 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#ffffff"
-   
-     >
+    android:layout_height="wrap_content"
+    android:background="#ffffff" >
+
      <LinearLayout
         android:id="@+id/home_menu1"
         android:layout_width="fill_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:background="#ffaec9"
+        android:background="@drawable/background"
         android:orientation="horizontal" >
  				
-        <EditText
-            android:id="@+id/home_editText_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:autoText="true"
-            android:drawableLeft="@drawable/search"
-            android:drawablePadding="4dp"
-            
-            android:ems="10"
-            android:hint="search!"
-            android:singleLine="true"
-             >
+        <LinearLayout
+        	android:id="@+id/home_menu1_1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="center_vertical"
+        	android:layout_weight="1"
+        	android:orientation="vertical" 
+      		 >
+		
+			<EditText
+            	android:id="@+id/home_editText_search"
+            	android:layout_width="wrap_content"
+            	android:layout_height="30dp"
+            	android:layout_marginLeft="20dp"
+           	 	android:layout_marginRight="10dp"
+            	android:autoText="true"
+            	android:layout_gravity="center_vertical"
+            	android:textColorHint="#ffffff"
+            	android:drawableLeft="@drawable/search1"
+            	android:drawablePadding="4dp"
+            	android:background="@null"
+            	android:ems="10"
+            	android:hint="search!"
+            	android:textSize="15dp"
+            	android:singleLine="true"
+             		>
             <requestFocus />
-        </EditText>
+        	</EditText>
+        	
+        	<View
+        		android:layout_width="fill_parent"
+        		android:layout_height="0.85dp"
+        		android:layout_marginLeft="10dp"
+            	android:layout_marginRight="10dp"
+        		android:layout_below="@+id/home_editText_search"
+        		android:layout_alignParentLeft="true"
+        		android:background="#ffffff" />
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/home_imageButton_massege"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
             android:background="#00000000"
-            android:src="@drawable/massege" />
+            android:src="@drawable/massege1" />
        
     </LinearLayout>
     
@@ -45,7 +68,7 @@
      <LinearLayout
 	    android:id="@+id/home_menu2"
 	    android:layout_width="fill_parent"
-	    android:layout_height="45dp"
+	    android:layout_height="55dp"
 	    android:layout_alignParentRight="true"
 	    android:layout_alignParentLeft="true"
 	    android:layout_alignParentBottom="true"
@@ -58,7 +81,7 @@
 	    android:layout_gravity="center_horizontal"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:layout_marginTop="5dp"
+	    android:layout_marginTop="15dp"
 	    android:layout_alignParentLeft="true"
 	    android:layout_alignParentRight="true"
 	    android:orientation="horizontal" 
@@ -129,6 +152,7 @@
 	        android:layout_weight="0.52"
 	        android:gravity="center"
 	        android:text="首页"
+	        android:textColor="#f67480"
 	        android:textSize="10dp" />
 
 	    <TextView
@@ -183,13 +207,14 @@
 	    android:layout_alignParentLeft="true"
 	    android:background="#a9b7b7" />
 	
-	 <ScrollView
+	 <com.example.layout.MyScrollView
         android:layout_below="@+id/home_menu1"
         android:layout_above="@+id/home_menu2"
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
+	    android:id="@+id/myScrollView"
 	    android:scrollbars="vertical"
-	    android:fillViewport="true"
+	    
 	    	>
 	<RelativeLayout 
 	    android:id="@+id/home_menu3"
@@ -222,7 +247,7 @@
 		    		android:layout_width="160dp"
 		    		android:layout_height="40dp"
 		    		android:layout_marginLeft="10dp"
-		    		android:background="#ffaec9"
+		    		android:background="@drawable/background"
 		    		android:textColor="#ffffff"
 	    			android:textStyle="bold"
 		    		android:text="卖" />
@@ -236,7 +261,7 @@
 		    		android:layout_marginRight="10dp"
 		    		android:textColor="#ffffff"
 	    			android:textStyle="bold"
-		    		android:background="#ffaec9"
+		    		android:background="@drawable/background"
 		    		android:text="求" />
     		</RelativeLayout>
     		
@@ -257,7 +282,7 @@
         			android:layout_weight="1"
         			android:layout_width="wrap_content"
         			android:layout_height="40dp"
-        			android:background="#ffaec9"
+        			android:background="@drawable/background"
         			android:textColor="#ffffff"
 	    			android:textStyle="bold"
         			android:text="创建一条信息" />
@@ -276,16 +301,17 @@
 		<LinearLayout 
 		    android:id="@+id/home_menu3_2"
 		    android:layout_width="fill_parent"
-		    android:layout_height="30dp"
+		    android:layout_height="40dp"
 		    android:layout_below="@+id/home_menu3_1"
 		    android:orientation="vertical"
 		    >
 		    <TextView
     	    	android:id="@+id/home_textview_hot"
-    	    	android:layout_marginTop="5dp"
     	    	android:layout_width="wrap_content"
     	    	android:layout_height="wrap_content"
     	    	android:drawableLeft="@drawable/hot"
+    	    	android:drawablePadding="4dp"
+    	    	android:layout_marginTop="10dp"
     	    	android:layout_gravity="center_horizontal"
     	    	android:textSize="13dp"
     	    	android:text="热门信息" />
@@ -302,13 +328,16 @@
     	<com.example.layout.ListViewForScrollView  
     		android:id="@+id/home_search_user_list"  
     		android:layout_width="fill_parent"  
-    		android:layout_height="fill_parent"  
+    		android:layout_height="600dp"  
     		android:layout_below="@+id/home_menu3_2"
+    		
     		>
+		   
+    		 
 		</com.example.layout.ListViewForScrollView> 
 		
 	</RelativeLayout>
 			
-    </ScrollView>
+    </com.example.layout.MyScrollView>
 
 </RelativeLayout>

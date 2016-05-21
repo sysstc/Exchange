@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ecf0f1">
+   
+    <LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_menu"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical"
+    android:background="#ffffff"
+        >
+        
+    	<LinearLayout 
+    	    android:id="@+id/item_menu1"
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_marginTop="10dp"
+    		android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginBottom="5dp"
+    		android:orientation="horizontal"
+       		 	>
+	
+        	<ImageView
+            	android:id="@+id/item_imageView_userPhoto"
+            	android:layout_width="40dp"
+            	android:layout_height="40dp"
+            	android:src="@drawable/photo1" />
+        
+        	<LinearLayout 
+        	    
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:orientation="vertical"
+    			android:layout_gravity="bottom"
+    			android:layout_marginLeft="20dp"
+        			>
+        	
+       			<TextView
+	        		android:id="@+id/item_textView_userName"
+	        		android:layout_width="wrap_content"
+	        		android:layout_height="wrap_content"
+	        		android:layout_weight="1"
+	        		android:gravity="center"
+	        		android:text="小胖子"
+	        		android:textSize="15dp" />
+       		
+       			<LinearLayout 
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:orientation="horizontal"
+    				android:layout_gravity="bottom"
+    			
+        			>
+        			<TextView
+	        			android:layout_width="wrap_content"
+	        			android:layout_height="wrap_content"
+	        			android:layout_weight="1"
+	        			android:gravity="center"
+	        			android:text="发布于"
+	        			android:textSize="10dp" />
+       			
+       				<TextView
+	        			android:id="@+id/item_textView_time"
+	        			android:layout_width="wrap_content"
+	        			android:layout_height="wrap_content"
+	        			android:layout_weight="1"
+	        			android:gravity="center"
+	        			android:text="2015-3-1"
+	        			android:textSize="10dp" />
+       			</LinearLayout>
+ 	
+   			</LinearLayout>
+   		
+        	<LinearLayout 
+            	android:layout_width="wrap_content"
+    			android:layout_height="fill_parent"
+    			android:layout_weight="1"
+    			android:layout_marginRight="10dp"
+    			android:layout_gravity="bottom"
+    			android:gravity="right"
+    			android:orientation="horizontal"
+            		>
+       			<ImageButton
+            		android:id="@+id/item_imageButton_massege"
+            		android:layout_width="30dp"
+            		android:layout_height="30dp"
+            		android:layout_gravity="bottom"
+      				android:background="#00000000"
+            		android:src="@drawable/massege" />
+       			<TextView
+	        		android:id="@+id/item_textView_massege"
+	        		android:layout_width="wrap_content"
+	        		android:layout_height="wrap_content"
+	        		android:gravity="right"
+	        		android:layout_gravity="bottom"
+	        		android:text="联系我"
+	        		android:textSize="10dp" />
+       			
+            
+        	</LinearLayout>
+   		  
+        
+    </LinearLayout>
+    	
+<!--     	
+    	
+    	 <LinearLayout
+    	     android:id="@+id/item_menu2"
+    	     android:layout_width="wrap_content"
+    	     android:layout_height="wrap_content"
+    	     android:layout_below="@+id/item_menu1"
+    	     android:layout_marginLeft="10dp"
+    	     android:layout_marginRight="10dp"
+    	     android:layout_marginTop="5dp"
+    	     android:orientation="horizontal" >
+
+   			<TextView
+    	    	android:id="@+id/item_textView_goodsName"
+    	    	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+    	    	android:layout_weight="1"
+    	    	android:layout_gravity="center_horizontal"
+    	    	android:textSize="15dp"
+    	    	android:layout_marginLeft="10dp"
+    	    	android:text="自行车" />
+	        	
+   			<LinearLayout 
+   			 	android:layout_width="fill_parent"
+   	 			android:layout_height="wrap_content"
+    			android:layout_weight="1"
+    			android:layout_marginLeft="10dp"
+    			android:orientation="horizontal"
+   			    	>
+   			    
+   			    <TextView
+    	    		android:layout_width="wrap_content"
+    	    		android:layout_height="wrap_content"
+    	    		android:layout_gravity="center_horizontal"
+    	    		android:textSize="15dp"
+    	    		android:text="￥" />
+
+   				<TextView
+   				    android:id="@+id/item_textView_price"
+   				    android:layout_width="121dp"
+   				    android:layout_height="wrap_content"
+   				    android:layout_gravity="center_horizontal"
+   				    android:text="200~300"
+   				    android:textSize="15dp" />
+
+   			</LinearLayout>
+   			
+		</LinearLayout> -->
+   		
+    	<LinearLayout
+    	    
+    	 	android:id="@+id/item_menu3"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_below="@+id/item_menu2"
+    	    android:layout_marginTop="5dp"
+    	    android:layout_marginBottom="5dp"
+    	    android:orientation="horizontal" 
+    	    >
+
+    		<ImageView
+    		    android:id="@+id/item_imageView_goods1"
+    		    android:layout_width="80dp"
+    		    android:layout_height="80dp"
+    		    android:layout_weight="1"
+    		    android:src="@drawable/web1" />
+    		<ImageView
+    		    android:id="@+id/item_imageView_goods2"
+    		    android:layout_width="80dp"
+    		    android:layout_height="80dp"
+    		    android:layout_weight="1"
+    		    android:src="@drawable/web2" />
+    		<ImageView
+    		    android:id="@+id/item_imageView_goods3"
+    		    android:layout_width="80dp"
+    		    android:layout_height="80dp"
+    		    android:layout_weight="1"
+    		    android:src="@drawable/web3" />
+    	    
+   		</LinearLayout>
+   			
+    	<ImageView
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="0.85dp"
+	    	android:layout_marginTop="10dp"
+	    	android:layout_alignParentLeft="true"
+	    	android:background="#ecf0f1" />
+    	
+    	<LinearLayout
+    	    
+    	 	android:id="@+id/item_menu4"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_below="@+id/item_menu3"
+    	    android:gravity="right"
+    	    android:layout_marginLeft="10dp"
+    	    android:layout_marginRight="10dp"
+    	    android:layout_marginTop="5dp"
+    	    android:orientation="horizontal" 
+    	    >
+
+    		<ImageButton
+    		    android:id="@+id/item_imageButton_like"
+    		    android:layout_width="30dp"
+    		    android:layout_height="30dp"
+    		    android:background="#00000000"
+    		    android:src="@drawable/like" />
+    		<ImageButton
+    		    android:id="@+id/item_imageButton_collect"
+    		    android:layout_width="30dp"
+    		    android:layout_height="30dp"
+ 				android:layout_marginLeft="20dp"
+    		    android:background="#00000000"
+    		    android:src="@drawable/collect" />
+   		</LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

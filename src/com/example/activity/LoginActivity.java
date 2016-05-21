@@ -1,6 +1,5 @@
 package com.example.activity;
 
-import h.is;
 
 import java.io.File;
 import java.io.InputStream;
@@ -95,10 +94,13 @@ public class LoginActivity extends BaseActivity{
 						public void onSuccess(List<User> list) {
 							// TODO 自动生成的方法存根
 							User user = list.get(0);
+							savePreferenceName(username);
+							Toast.makeText(LoginActivity.this, "User name = "+username, Toast.LENGTH_SHORT).show();
 							if(!user.getUsername().isEmpty()){
-								savePreferenceName(user.getUsername());
+							
 								Intent intent = new Intent(LoginActivity.this,MainActivity.class);
 								startActivity(intent);
+								finish();
 							}
 						}
 						

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:background="#ffffff"
+    	>
     <LinearLayout
         android:id="@+id/create_menu1"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
-        android:background="#ffaec9"
+        android:background="@drawable/background"
         android:orientation="horizontal">
 
         <TextView
@@ -19,6 +21,8 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:gravity="center_horizontal"
+            android:textColor="#ffffff"
+	    	android:textStyle="bold"
             android:text="创建信息"
             android:textIsSelectable="true"
             android:textSize="25dp" />
@@ -37,7 +41,7 @@
      <LinearLayout
 	    android:id="@+id/create_menu2"
 	    android:layout_width="fill_parent"
-	    android:layout_height="45dp"
+	    android:layout_height="55dp"
 	    android:layout_alignParentRight="true"
 	    android:layout_alignParentLeft="true"
 	    android:layout_alignParentBottom="true"
@@ -50,7 +54,7 @@
 	    	android:layout_gravity="center_horizontal"
 	    	android:layout_width="match_parent"
 	    	android:layout_height="wrap_content"
-	    	android:layout_marginTop="5dp"
+	    	android:layout_marginTop="15dp"
 	    	android:layout_alignParentLeft="true"
 	    	android:layout_alignParentRight="true"
 	    	android:orientation="horizontal" 
@@ -63,7 +67,8 @@
 	        android:layout_gravity="center_vertical"
 	        android:layout_weight="1"
 	        android:background="#00000000"
-	        android:src="@drawable/home1" />
+	        android:src="@drawable/home1"
+	        android:onClick="submit"  />
 
 	    <ImageButton
 	        android:id="@+id/create_imageButton_ask"
@@ -72,7 +77,8 @@
 	        android:layout_gravity="center_vertical"
 	        android:layout_weight="1"
 	        android:background="#00000000"
-	        android:src="@drawable/ask1" />
+	        android:src="@drawable/ask1"
+	        android:onClick="submit"  />
 
 	    <ImageButton
 	        android:id="@+id/create_imageButton_sale"
@@ -81,7 +87,8 @@
 	        android:layout_gravity="center_vertical"
 	        android:layout_weight="1"
 	        android:background="#00000000"
-	        android:src="@drawable/sale1" />
+	        android:src="@drawable/sale1" 
+	        android:onClick="submit" />
 
 	    <ImageButton
 	        android:id="@+id/create_imageButton_create"
@@ -90,7 +97,8 @@
 	        android:layout_gravity="center_vertical"
 	        android:layout_weight="1"
 	        android:background="#00000000"
-	        android:src="@drawable/create" />
+	        android:src="@drawable/create" 
+	        android:onClick="submit" />
 
 	    <ImageButton
 	        android:id="@+id/create_imageButton_myself"
@@ -99,7 +107,8 @@
 	        android:layout_gravity="center_vertical"
 	        android:layout_weight="1"
 	        android:background="#00000000"
-	        android:src="@drawable/myself1" />
+	        android:src="@drawable/myself1"
+	        android:onClick="submit"  />
 	</LinearLayout>
 
 	<LinearLayout
@@ -116,7 +125,7 @@
 	        android:layout_weight="0.52"
 	        android:gravity="center"
 	        android:text="首页"
-	        android:textSize="15px" />
+	        android:textSize="10dp" />
 
 	    <TextView
 	        android:id="@+id/create_textView_ask"
@@ -126,7 +135,7 @@
 	        android:layout_weight="0.74"
 	        android:gravity="center"
 	        android:text="求"
-	        android:textSize="15px" />
+	        android:textSize="10dp" />
 
 	    <TextView
 	        android:id="@+id/create_textView_sale"
@@ -136,7 +145,7 @@
 	        android:layout_weight="0.60"
 	        android:gravity="center"
 	        android:text="卖"
-	        android:textSize="15px" />
+	        android:textSize="10dp" />
 
 	    <TextView
 	        android:id="@+id/create_textView_create"
@@ -146,7 +155,8 @@
 	        android:layout_weight="0.69"
 	        android:gravity="center"
 	        android:text="创"
-	        android:textSize="15px" />
+	        android:textColor="#f67480"
+	        android:textSize="10dp" />
 
 	    <TextView
 	        android:id="@+id/create_textView_myself"
@@ -157,7 +167,7 @@
 	        android:gravity="center"
 	        android:layout_weight="0.3"
 	        android:text="个人中心"
-	        android:textSize="15px" />
+	        android:textSize="10dp" />
 
 		</LinearLayout>
 	
@@ -188,26 +198,28 @@
 	    <Button
 	    	android:id="@+id/create_button_ask"
 	    	android:layout_width="200dp"
-	    	android:layout_height="50dp"
+	    	android:layout_height="60dp"
 	    	android:layout_centerHorizontal="true"
-	    	android:background="#e0ffaec9"
-	    	android:textSize="23dp"
+	    	android:background="@drawable/background"
+	    	android:textColor="#ffffff"
+	    	android:textStyle="bold"
+	    	android:textSize="25dp"
 	    	android:text="求助于人" />
 
 		<Button
 	    	android:id="@+id/create_button_sale"
 	    	android:layout_width="200dp"
-	    	android:layout_height="50dp"
+	    	android:layout_height="60dp"
 	    	android:layout_below="@+id/create_button_ask"
-	    	android:layout_marginTop="30dp"
+	    	android:layout_marginTop="50dp"
 	    	android:layout_centerHorizontal="true"
-	    	android:background="#e0ffaec9"
-	    	android:textSize="23dp"
+	    	android:background="@drawable/background"
+	    	android:textColor="#ffffff"
+	    	android:textStyle="bold"
+	    	android:textSize="25dp"
 	    	android:text="我要出售" />
 	    
 	   </RelativeLayout>
-	    
-	    
 		
 	</RelativeLayout>
 

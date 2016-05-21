@@ -1,319 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    
-	 <LinearLayout
+    android:layout_height="match_parent"
+    android:background="#ffffff" xmlns:android1="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
         android:id="@+id/ask_menu1"
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:background="#ffaec9"
-        android:orientation="horizontal" >
-
-        <EditText
-            android:id="@+id/ask_editText_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:autoText="true"
-            android:drawableLeft="@drawable/search"
-            android:drawablePadding="4dp"
-            android:ems="10"
-            android:hint="search!"
-            android:singleLine="true" >
+        android:background="@drawable/background"
+        android:orientation="horizontal" 
+      	 >
+       
+      	<LinearLayout
+        	android:id="@+id/ask_menu1_1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="center_vertical"
+        	android:layout_weight="1"
+        	android:orientation="vertical" 
+      		 >
+		
+			<EditText
+            	android:id="@+id/ask_editText_search"
+            	android:layout_width="wrap_content"
+            	android:layout_height="30dp"
+            	android:layout_marginLeft="20dp"
+           	 	android:layout_marginRight="10dp"
+            	android:autoText="true"
+            	android:layout_gravity="center_vertical"
+            	android:textColorHint="#ffffff"
+            	android:drawableLeft="@drawable/search1"
+            	android:drawablePadding="4dp"
+            	android:background="@null"
+            	android:ems="10"
+            	android:hint="search!"
+            	android1:textSize="15dp"
+            	android:singleLine="true"
+             		>
             <requestFocus />
-        </EditText>
-
+        	</EditText>
+        	
+        	<View
+        		android:layout_width="fill_parent"
+        		android:layout_height="0.85dp"
+        		android:layout_marginLeft="10dp"
+            	android:layout_marginRight="10dp"
+        		android:layout_below="@+id/ask_editText_search"
+        		android:layout_alignParentLeft="true"
+        		android:background="#ffffff" />
+        </LinearLayout>
+        
         <ImageButton
             android:id="@+id/ask_imageButton_massege"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android1:layout_marginRight="10dp"
             android:layout_gravity="center_vertical"
             android:background="#00000000"
-            android:src="@drawable/massege" />
-       
-    </LinearLayout>
-    
-	 <LinearLayout
-	    android:id="@+id/ask_menu2"
-	    android:layout_width="fill_parent"
-	    android:layout_height="45dp"
-	    android:layout_alignParentRight="true"
-	    android:layout_alignParentLeft="true"
-	    android:layout_alignParentBottom="true"
-	    android:background="#ffffff"
-	    android:orientation="vertical"
-	     >
-
-		<LinearLayout
-	    	android:id="@+id/ask_menu2_1"
-	    	android:layout_gravity="center_horizontal"
-	    	android:layout_width="match_parent"
-	    	android:layout_height="wrap_content"
-	    	android:layout_marginTop="5dp"
-	    	android:layout_alignParentLeft="true"
-	    	android:layout_alignParentRight="true"
-	    	android:orientation="horizontal" 
-	    >
-
-	    <ImageButton
-	        android:id="@+id/ask_imageButton_home"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:layout_weight="1"
-	        android:background="#00000000"
-	        android:src="@drawable/home1" />
-
-	    <ImageButton
-	        android:id="@+id/ask_imageButton_ask"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:layout_weight="1"
-	        android:background="#00000000"
-	        android:src="@drawable/ask" />
-
-	    <ImageButton
-	        android:id="@+id/ask_imageButton_sale"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:layout_weight="1"
-	        android:background="#00000000"
-	        android:src="@drawable/sale1" />
-
-	    <ImageButton
-	        android:id="@+id/ask_imageButton_create"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:layout_weight="1"
-	        android:background="#00000000"
-	        android:src="@drawable/create1" />
-
-	    <ImageButton
-	        android:id="@+id/ask_imageButton_myself"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:layout_weight="1"
-	        android:background="#00000000"
-	        android:src="@drawable/myself1" />
-	</LinearLayout>
-
-	<LinearLayout
-	    android:id="@+id/ask_menu2_2"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="horizontal" >
-
-	    <TextView
-	        android:id="@+id/ask_textView_home"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:layout_weight="0.52"
-	        android:gravity="center"
-	        android:text="首页"
-	        android:textSize="15px" />
-
-	    <TextView
-	        android:id="@+id/ask_textView_ask"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:layout_weight="0.74"
-	        android:gravity="center"
-	        android:text="求"
-	        android:textSize="15px" />
-
-	    <TextView
-	        android:id="@+id/ask_textView_sale"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:layout_weight="0.60"
-	        android:gravity="center"
-	        android:text="卖"
-	        android:textSize="15px" />
-
-	    <TextView
-	        android:id="@+id/ask_textView_create"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:layout_weight="0.69"
-	        android:gravity="center"
-	        android:text="创"
-	        android:textSize="15px" />
-
-	    <TextView
-	        android:id="@+id/ask_textView_myself"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentRight="true"
-	        android:layout_alignParentTop="true"
-	        android:gravity="center"
-	        android:layout_weight="0.3"
-	        android:text="个人中心"
-	        android:textSize="15px" />
-
-		</LinearLayout>
-	
+            android:src="@drawable/massege1" />
     </LinearLayout>
 
-	<ImageView
-	    android:layout_width="fill_parent"
-	    android:layout_height="0.85dp"
-	    android:layout_above="@+id/ask_menu2"
-	    android:layout_alignParentLeft="true"
-	    android:background="#a9b7b7" />
-	
-	<ScrollView
-        android:layout_below="@+id/ask_menu1"
+    <LinearLayout
+        android:id="@+id/ask_menu2"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ask_menu2_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/ask_imageButton_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:onClick="submit"
+                android:src="@drawable/home1" />
+
+            <ImageButton
+                android:id="@+id/ask_imageButton_ask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:onClick="submit"
+                android:src="@drawable/ask" />
+
+            <ImageButton
+                android:id="@+id/ask_imageButton_sale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:onClick="submit"
+                android:src="@drawable/sale1" />
+
+            <ImageButton
+                android:id="@+id/ask_imageButton_create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:onClick="submit"
+                android:src="@drawable/create1" />
+
+            <ImageButton
+                android:id="@+id/ask_imageButton_myself"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:onClick="submit"
+                android:src="@drawable/myself1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ask_menu2_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/ask_textView_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.52"
+                android:gravity="center"
+                android:text="首页"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/ask_textView_ask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.74"
+                android:gravity="center"
+                android:text="求"
+                android:textColor="#f67480"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/ask_textView_sale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.60"
+                android:gravity="center"
+                android:text="卖"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/ask_textView_create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.69"
+                android:gravity="center"
+                android:text="创"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/ask_textView_myself"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:text="个人中心"
+                android:textSize="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.85dp"
         android:layout_above="@+id/ask_menu2"
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:scrollbars="vertical"
-	    
-	    	>
-	<RelativeLayout 
-	    android:id="@+id/ask_menu3"
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:layout_below="@+id/ask_menu1"
-	    >
-	    
-		<RelativeLayout
-	    	android:id="@+id/ask_menu3_1"
-	    	android:layout_width="wrap_content"
-	    	android:layout_height="45dp"
-	    	android:layout_alignParentRight="true"
-	    	android:layout_alignParentLeft="true"
-	    	android:background="#ffffff"
-	    	
+        android:layout_alignParentLeft="true"
+        android:background="#a9b7b7" />
 
-	    	>
-          
-    		
-			<LinearLayout
-	    		android:id="@+id/ask_menu3_1_1"
-	    		android:layout_width="wrap_content"
-	    		android:layout_height="wrap_content"
-	    		android:layout_alignParentRight="true"
-	    		android:layout_alignParentLeft="true"
-	    		android:layout_marginRight="5dp"
-	    		android:layout_marginLeft="5dp"
-	   	 		android:layout_marginTop="5dp"
-	    		android:orientation="horizontal" >
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ask_menu2"
+        android:layout_below="@+id/ask_menu1"
+        android:scrollbars="vertical" >
 
-			<Button
-        			android:id="@+id/ask_button_create"
-        			android:layout_weight="1"
-        			android:layout_width="wrap_content"
-        			android:layout_height="35dp"
-        			android:background="#ffaec9"
-        			android:text="创建一条求的信息" />
+        <RelativeLayout
+            android:id="@+id/ask_menu3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/ask_menu1" >
 
-    		</LinearLayout>
-    	
-        </RelativeLayout>
-				
-	 	<ImageView
-	    		android:layout_width="fill_parent"
-	   			android:layout_height="0.85dp"
-	    		android:layout_below="@+id/ask_menu3_1"
-	    		android:layout_alignParentLeft="true"
-	    		android:background="#a9b7b7" />
-	 	
-	 	<RelativeLayout
-	    		android:id="@+id/ask_menu3_2"
-	    		android:layout_width="wrap_content"
-	    		android:layout_below="@+id/ask_menu3_1"
-	    		android:layout_height="45dp"
-	   	 		android:layout_alignParentRight="true"
-	    		android:layout_alignParentLeft="true"
-	    		
-	    		 >
+            <RelativeLayout
+                android:id="@+id/ask_menu3_1"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:background="#ffffff" >
 
-				<Button
-		    		android:id="@+id/ask_button_ask1"
-		    		android:layout_width="100dp"
-		    		android:layout_height="35dp"
-		    		android:layout_marginLeft="5dp"
-		    		android:layout_centerVertical="true"
-		    		android:background="#ffaec9"
-		    		android:text="租/借" />
+                <LinearLayout
+                    android:id="@+id/ask_menu3_1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
 
-				<Button
-		   	 		android:id="@+id/ask_button_ask2"
-		    		android:layout_width="100dp"
-		    		android:layout_height="35dp"
-		    		android:layout_alignParentRight="true"
-		    		android:layout_centerVertical="true"
-		    		android:layout_marginRight="5dp"
-		    		android:background="#ffaec9"
-		    		android:text="交换" />
+                    <Button
+                        android:id="@+id/ask_button_create"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/background"
+                        android:text="创建一条求的信息"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
 
-				<Button
-				    android:id="@+id/ask_button_ask3"
-				    android:layout_width="100dp"
-				    android:layout_height="35dp"
-				    android:layout_centerHorizontal="true"
-				    android:layout_centerVertical="true"
-				    android:background="#ffaec9"
-				    android:text="买" />
-				
-    		</RelativeLayout>
-    		
-	 	<ImageView
-	    		android:layout_width="fill_parent"
-	   			android:layout_height="0.85dp"
-	    		android:layout_below="@+id/ask_menu3_2"
-	    		android:layout_alignParentLeft="true"
-	    		android:background="#a9b7b7" />
-		
-		<LinearLayout 
-		    android:id="@+id/ask_menu3_3"
-		    android:layout_width="fill_parent"
-		    android:layout_height="30dp"
-		    android:layout_below="@+id/ask_menu3_2"
-		    android:orientation="vertical"
-		    >
-		    <TextView
-    	    	android:id="@+id/ask_textView_hot"
-    	    	android:layout_marginTop="5dp"
-    	    	android:layout_width="wrap_content"
-    	    	android:layout_height="wrap_content"
-    	    	android:drawableLeft="@drawable/hot"
-    	    	android:layout_gravity="center_horizontal"
-    	    	android:textSize="15dp"
-    	    	android:text="热门信息" />
-		</LinearLayout>
-		
-   		<ImageView
-	    		android:layout_width="fill_parent"
-	   			android:layout_height="0.85dp"
-	    		android:layout_below="@+id/ask_menu3_3"
-	    		android:layout_alignParentLeft="true"
-	    		android:background="#a9b7b7" />
-   		
-   		
-    	<ListView  
-    		android:id="@+id/ask_search_user_list"  
-    		android:layout_width="fill_parent"  
-    		android:layout_height="wrap_content"  
-    		android:layout_below="@+id/ask_menu3_3"
-    		
-    		>
-    		 
-		</ListView> 
-		
-	</RelativeLayout>
-	
-			
-    </ScrollView>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.85dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/ask_menu3_1"
+                android:background="#a9b7b7" />
+
+            
+            <LinearLayout 
+                android:id="@+id/ask_menu3_2"
+                android:layout_below="@+id/ask_menu3_1"
+    			android:layout_width="match_parent"
+    			android:layout_height="match_parent"
+    			android:orientation="vertical" >
+
+    			<View
+       		 		android:layout_width="fill_parent"
+        			android:layout_height="0.85dp"
+        			android:background="#a9b7b7" />
+				<LinearLayout
+    				android:layout_width="match_parent"
+    				android:layout_height="wrap_content"
+    				android:orientation="horizontal" >
+
+					<Button
+		    			android:id="@+id/button1"
+		   	 			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"
+		    			android:layout_marginLeft="5dp"
+		    			android:layout_marginRight="10dp"
+		    			android:text="商品分类"
+		    			android:textSize="15dp"
+		    			android:drawableRight="@drawable/belowlist" 
+		    			android:background="#00000000"
+		    			android:drawablePadding="4dp"
+		    			android:paddingLeft="5dp"
+		      			android:layout_weight="1"/>
+					<View
+        				android:layout_width="0.85dp"
+        				android:layout_height="fill_parent"
+        				android:background="#a9b7b7" />
+					<Button
+		    			android:id="@+id/button2"
+		    			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"
+		    			android:layout_marginLeft="5dp"
+		    			android:layout_marginRight="10dp"
+		    			android:text="商品排序"
+		    			android:textSize="15dp"
+		    			android:layout_weight="1"
+		   	 			android:drawableRight="@drawable/belowlist" 
+		    			android:background="#00000000"
+		    			android:drawablePadding="4dp"
+		    			android:paddingLeft="5dp"/>
+					<View
+        				android:layout_width="0.85dp"
+        				android:layout_height="fill_parent"
+        				android:background="#a9b7b7" />
+					<Button
+		    			android:id="@+id/button3"
+		    			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"
+		    			android:layout_marginLeft="5dp"
+		    			android:layout_marginRight="10dp"
+		    			android:layout_weight="1"
+		    			android:text="商品筛选"
+		    			android:textSize="15dp"
+		    			android:drawableRight="@drawable/belowlist" 
+		    			android:background="#00000000"
+		    			android:drawablePadding="4dp"
+		    			android:paddingLeft="5dp"/>
     
+			</LinearLayout>
+			<View
+        		android:layout_width="fill_parent"
+        		android:layout_height="0.85dp"
+        		android:background="#a9b7b7" />
+		</LinearLayout>
+
+     
+        <com.example.layout.ListViewForScrollView
+            android:id="@+id/ask_search_user_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LinearLayout"
+            android:layout_below="@+id/ask_menu3_2" >
+         </com.example.layout.ListViewForScrollView>
+        </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>
