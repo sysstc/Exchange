@@ -10,17 +10,19 @@ public class User extends BmobObject{
 	private String usermail;
 	private String usercontact;
 	private String userpassword;
-	private BmobFile userhead;
+	private BmobFile userhead;  
 	private String userschool;
 	private String usernum;
 	private int usertag;
-	
-	
-	public User(Integer userid, String username, String usernick,
+
+	public User(){
+		super();
+	}
+	public User( String username, String usernick,
 			String usermail, String usercontact, String userpassword,
 			BmobFile userhead, String userschool, String usernum, int usertag) {
 		super();
-		this.userid = userid;
+
 		this.username = username;
 		this.usernick = usernick;
 		this.usermail = usermail;

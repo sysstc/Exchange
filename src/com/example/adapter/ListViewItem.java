@@ -6,6 +6,8 @@ public class ListViewItem{
 	String userNameStr;
 	String timeStr;
 	String goodsNameStr;
+	String goodsid;
+	Integer type;
 	String priceString;
 	String goods1URL;
 	String goods2URL;
@@ -13,7 +15,7 @@ public class ListViewItem{
 
 	public ListViewItem(Integer userPhotoURL, String userNameStr,
 			String timeStr, String goodsNameStr, String priceString,
-			String goods1url, String goods2url, String goods3url) {
+			String goods1url, String goods2url, String goods3url,String goodsid,Integer type) {
 		super();
 		this.userPhotoURL = userPhotoURL;
 		this.userNameStr = userNameStr;
@@ -23,7 +25,26 @@ public class ListViewItem{
 		goods1URL = goods1url;
 		goods2URL = goods2url;
 		goods3URL = goods3url;
+		this.goodsid = goodsid;
+		this.type = type;
 	}
+	
+	public String getGoodsid() {
+		return goodsid;
+	}
+
+	public void setGoodsid(String goodsid) {
+		this.goodsid = goodsid;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
 	public Integer getUserPhotoURL() {
 		return userPhotoURL;
 	}

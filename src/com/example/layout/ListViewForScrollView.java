@@ -2,9 +2,11 @@ package com.example.layout;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class ListViewForScrollView extends ListView{
+public class ListViewForScrollView extends ListView implements android.widget.AdapterView.OnItemClickListener{
 
 	public ListViewForScrollView(Context context) {
 		super(context);
@@ -23,4 +25,11 @@ public class ListViewForScrollView extends ListView{
 		int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE>>2, MeasureSpec.AT_MOST);
 		super.onMeasure(widthMeasureSpec, expandSpec);
 	}
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		// TODO 自动生成的方法存根
+		
+	}
+	
 }

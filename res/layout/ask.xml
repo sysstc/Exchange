@@ -324,13 +324,14 @@
 		</LinearLayout>
 
      
-        <com.example.layout.ListViewForScrollView
+      <com.example.layout.ListViewForScrollView
             android:id="@+id/ask_search_user_list"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/LinearLayout"
             android:layout_below="@+id/ask_menu3_2" >
-         </com.example.layout.ListViewForScrollView>
+         </com.example.layout.ListViewForScrollView> 
+  
         </RelativeLayout>
     </ScrollView>
 

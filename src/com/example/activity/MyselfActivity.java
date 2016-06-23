@@ -21,9 +21,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,19 +36,32 @@ public class MyselfActivity extends BaseActivity{
 	private ImageButton imgbutton_exit;
 	private String username;
 	private String userheadUrl;
+	
+	private LinearLayout myself_menu3;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO 自动生成的方法存根
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.myself);
 		myself_textView_name1 = (TextView) findViewById(R.id.myself_textView_name1);
 		myself_textView_name2 = (TextView) findViewById(R.id.myself_textView_name2);
 		myself_imageView = (ImageView) findViewById(R.id.myself_imageView);
+		myself_menu3 = (LinearLayout) findViewById(R.id.myself_menu3);
 		imgbutton_exit = (ImageButton) findViewById(R.id.imgbutton_exit);
 		if (!getPreferenceName().isEmpty()) {
 			username = getPreferenceName();	
 			Toast.makeText(MyselfActivity.this, "username = "+username, Toast.LENGTH_SHORT).show();
 		}
+		myself_menu3.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO 自动生成的方法存根
+				Intent intent = new Intent(MyselfActivity.this,PublishNewsActivity.class);
+				startActivity(intent);
+			}
+		});
 		imgbutton_exit.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -60,9 +75,12 @@ public class MyselfActivity extends BaseActivity{
 						// TODO 自动生成的方法存根
 						savePreferenceName("");
 						username="";
+						savePreferenceId(0);
+						
 						finish();
 						Intent intent = new Intent(MyselfActivity.this,MainActivity.class);
 						startActivity(intent);
+						finish();
 					}
 				}).setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					@Override
@@ -90,7 +108,7 @@ public class MyselfActivity extends BaseActivity{
 					Bitmap bitmap = BitmapFactory.decodeFile(filepath);
 					Bitmap mBitmap = bitmap.createScaledBitmap(bitmap, 70, 70, true);
 					myself_imageView.setImageBitmap(mBitmap);	
-				}else{
+				}else if(users.get(0).getUserhead()!=null){
 					BmobFile bmobFile =  users.get(0).getUserhead();
 					File saveFile = new File(Environment.getExternalStorageDirectory()
 										+"/exchange/user/headimage/"+username+".jpg");
@@ -124,21 +142,25 @@ public class MyselfActivity extends BaseActivity{
 		case R.id.home_imageButton_home:
 			Intent intent1 = new Intent(this,MainActivity.class);
 			startActivity(intent1);
+			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);
 			finish();
 			break;
 		case R.id.home_imageButton_ask:
 			Intent intent2 = new Intent(this,AskActivity.class);
 			startActivity(intent2);
+			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);
 			finish();
 			break;
 		case R.id.home_imageButton_sale:
 			Intent intent3 = new Intent(this,SaleActivity.class);
 			startActivity(intent3);
+			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);
 			finish();
 			break;
 		case R.id.home_imageButton_creat:
 			Intent intent4 = new Intent(this,CreateActivity.class);
 			startActivity(intent4);
+			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);
 			finish();
 			break;
 			

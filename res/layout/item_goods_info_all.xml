@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="#ecf0f1">
+    android:background="#ecf0f1"
+    android:descendantFocusability="blocksDescendants">
    
     <LinearLayout 
     android:layout_width="fill_parent"
@@ -109,11 +110,11 @@
         
     </LinearLayout>
     	
-<!--     	
+    	
     	
     	 <LinearLayout
     	     android:id="@+id/item_menu2"
-    	     android:layout_width="wrap_content"
+    	     android:layout_width="fill_parent"
     	     android:layout_height="wrap_content"
     	     android:layout_below="@+id/item_menu1"
     	     android:layout_marginLeft="10dp"
@@ -121,7 +122,7 @@
     	     android:layout_marginTop="5dp"
     	     android:orientation="horizontal" >
 
-   			<TextView
+   			<!-- <TextView
     	    	android:id="@+id/item_textView_goodsName"
     	    	android:layout_width="wrap_content"
     	    	android:layout_height="wrap_content"
@@ -129,10 +130,10 @@
     	    	android:layout_gravity="center_horizontal"
     	    	android:textSize="15dp"
     	    	android:layout_marginLeft="10dp"
-    	    	android:text="自行车" />
+    	    	android:text="自行车" /> -->
 	        	
    			<LinearLayout 
-   			 	android:layout_width="fill_parent"
+   			 	android:layout_width="wrap_content"
    	 			android:layout_height="wrap_content"
     			android:layout_weight="1"
     			android:layout_marginLeft="10dp"
@@ -148,15 +149,43 @@
 
    				<TextView
    				    android:id="@+id/item_textView_price"
-   				    android:layout_width="121dp"
+   				    android:layout_width="wrap_content"
    				    android:layout_height="wrap_content"
    				    android:layout_gravity="center_horizontal"
    				    android:text="200~300"
    				    android:textSize="15dp" />
 
    			</LinearLayout>
+
+   			<LinearLayout
+   			    android:id="@+id/item_menu4"
+   			    android:layout_width="wrap_content"
+   			    android:layout_height="wrap_content"
+   			    android:layout_marginLeft="10dp"
+   			    android:layout_marginRight="10dp"
+   			    android:layout_marginTop="5dp"
+   			    android:layout_weight="1"
+   			   	android:gravity="right"
+   			    android:orientation="horizontal" >
+
+    		<ImageButton
+    		    android:id="@+id/item_imageButton_like"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:background="#00000000"
+    		    android:src="@drawable/like" />
+    		
+    		<ImageButton
+    		    android:id="@+id/item_imageButton_collect"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+ 				android:layout_marginLeft="10dp"
+    		    android:background="#00000000"
+    		    android:src="@drawable/collect" />
+   		</LinearLayout>
    			
-		</LinearLayout> -->
+		</LinearLayout>
+		
    		
     	<LinearLayout
     	    
@@ -197,33 +226,7 @@
 	    	android:layout_alignParentLeft="true"
 	    	android:background="#ecf0f1" />
     	
-    	<LinearLayout
-    	    
-    	 	android:id="@+id/item_menu4"
-    	    android:layout_width="fill_parent"
-    	    android:layout_height="wrap_content"
-    	    android:layout_below="@+id/item_menu3"
-    	    android:gravity="right"
-    	    android:layout_marginLeft="10dp"
-    	    android:layout_marginRight="10dp"
-    	    android:layout_marginTop="5dp"
-    	    android:orientation="horizontal" 
-    	    >
-
-    		<ImageButton
-    		    android:id="@+id/item_imageButton_like"
-    		    android:layout_width="30dp"
-    		    android:layout_height="30dp"
-    		    android:background="#00000000"
-    		    android:src="@drawable/like" />
-    		<ImageButton
-    		    android:id="@+id/item_imageButton_collect"
-    		    android:layout_width="30dp"
-    		    android:layout_height="30dp"
- 				android:layout_marginLeft="20dp"
-    		    android:background="#00000000"
-    		    android:src="@drawable/collect" />
-   		</LinearLayout>
+    	
     </LinearLayout>
 
 </RelativeLayout>

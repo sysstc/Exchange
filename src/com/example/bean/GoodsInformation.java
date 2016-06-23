@@ -12,12 +12,17 @@ public class GoodsInformation extends BmobObject{
 	public BmobFile goodsimg3;
 	public BmobFile goodsimg4;
 	public BmobFile goodsimg5;
+	public float goodprice;
+	public String goodsdescribe;
 	
 	public Integer type;
 	public Integer goodsclick;
 	public Integer userid;
 	
-	public GoodsInformation(String goodsid, String goodsname,
+	public GoodsInformation(){
+		super();
+	}
+	public GoodsInformation(String goodsid, String goodsname,float goodprice,String goodsdescribe,
 			BmobFile goodsimg1, BmobFile goodsimg2, BmobFile goodsimg3,
 			BmobFile goodsimg4, BmobFile goodsimg5,Integer type, Integer goodsclick,Integer userid) {
 		super();
@@ -30,10 +35,33 @@ public class GoodsInformation extends BmobObject{
 		this.goodsimg4 = goodsimg4;
 		this.goodsimg5 = goodsimg5;
 		this.type = type;
+		this.goodprice = goodprice;
 		this.goodsclick = goodsclick;
 		this.userid = userid;
+		this.goodsdescribe = goodsdescribe;
 	}
 	
+	
+	public String getGoodsdescribe() {
+		return goodsdescribe;
+	}
+
+
+	public void setGoodsdescribe(String goodsdescribe) {
+		this.goodsdescribe = goodsdescribe;
+	}
+
+
+	public float getGoodprice() {
+		return goodprice;
+	}
+
+
+	public void setGoodprice(float goodprice) {
+		this.goodprice = goodprice;
+	}
+
+
 	public Integer getUserid() {
 		return userid;
 	}

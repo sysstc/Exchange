@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="#eee"
+    android:orientation="vertical" >
+    
+   
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="37dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/createSale_text1"
+            android:layout_width="3dp"
+            android:orientation="horizontal"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+             android:onClick="submit_sale"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/createSale_bottomMenu_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="租/借"
+                android:textColor="#f67480"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="3dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:id="@+id/createSale_text2"
+             android:onClick="submit_sale"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/createSale_bottomMenu_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="出/售" 
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="3dp"
+             android:id="@+id/createSale_text3"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:onClick="submit_sale"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/createSale_bottomMenu_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="易/换"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+     <ImageView
+        android:id="@+id/id_iv_tabline"
+        android:layout_width="100dp"
+        android:layout_height="3dp"
+        android:background="#f67480" />
+
+
+</LinearLayout>

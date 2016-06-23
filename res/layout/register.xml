@@ -32,7 +32,7 @@
 	    	android:textStyle="bold"
 	    	android:textColor="#ffffff"
             android:textIsSelectable="true"
-            android:textSize="20dp" />   
+            android:textSize="16dp" />   
     </LinearLayout>
     
     <ScrollView
@@ -75,8 +75,8 @@
             <requestFocus />
         </EditText>
 
-			<ImageButton
-			    android:id="@+id/register_imageButton_photo"
+			<ImageView
+			    android:id="@+id/register_imageView_photo"
 			    android:layout_marginLeft="10dp"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
 	    android:orientation="horizontal" >
 
 		<EditText
-             android:id="@+id/regist_editText_password"
+             android:id="@+id/regist_editText_phone"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_weight="1"
@@ -232,7 +232,8 @@
         	android:background="@drawable/background"
         	android:textColor="#ffffff"
 	    	android:textStyle="bold"
-        	android:text="注册" />
+        	android:text="注册" 
+        	/>
 
     	</LinearLayout>
 		</LinearLayout>

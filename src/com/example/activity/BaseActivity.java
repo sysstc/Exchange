@@ -3,10 +3,15 @@ package com.example.activity;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.text.TextUtils;
+import android.util.Log;
+import android.widget.Toast;
 
-public class BaseActivity extends Activity{
+public class BaseActivity extends FragmentActivity{
     public static final String USER_ID = "user_id";
     public static final String USER_NAME = "user_name";
+    public static String TAG = "bmob";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO
@@ -17,7 +22,7 @@ public class BaseActivity extends Activity{
     /**
      * 将此次登陆的账户信息存储下来
      * */
-    protected void savePreferenceName(String value) {
+    public void savePreferenceName(String value) {
         // 获取SharedPreference
         SharedPreferences preference = getSharedPreferences("android",
                 MODE_PRIVATE);
@@ -28,7 +33,7 @@ public class BaseActivity extends Activity{
         // 提交存入文件中
         editor.commit();
     }
-    protected void savePreferenceId(Integer value) {
+    public void savePreferenceId(Integer value) {
         // 获取SharedPreference
         SharedPreferences preference = getSharedPreferences("android",
                 MODE_PRIVATE);
@@ -44,7 +49,7 @@ public class BaseActivity extends Activity{
      *
      * @return
      * */
-    protected String getPreferenceName() {
+    public String getPreferenceName() {
         // 获取SharedPreference
         SharedPreferences preference = getSharedPreferences("android",
                 MODE_PRIVATE);
@@ -52,7 +57,7 @@ public class BaseActivity extends Activity{
         return  preference.getString(USER_NAME, "");
 
     }
-    protected Integer getPreferenceId() {
+    public Integer getPreferenceId() {
         // 获取SharedPreference
         SharedPreferences preference = getSharedPreferences("android",
                 MODE_PRIVATE);
@@ -60,7 +65,7 @@ public class BaseActivity extends Activity{
         return  preference.getInt(USER_ID,0);
 
     }
-    protected void deletePreference() {
+    public void deletePreference() {
         // 获取SharedPreference
         SharedPreferences preference = getSharedPreferences("android",
                 MODE_PRIVATE);
@@ -72,5 +77,21 @@ public class BaseActivity extends Activity{
         // 提交存入文件中
         editor.commit();
     }
-
+    Toast mToast;
+    public void toast(String msg){
+		Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+		Log.d(TAG, msg);
+	}
+    
+    public void showToast(String text) {
+		if (!TextUtils.isEmpty(text)) {
+			if (mToast == null) {
+				mToast = Toast.makeText(getApplicationContext(), text,
+						Toast.LENGTH_SHORT);
+			} else {
+				mToast.setText(text);
+			}
+			mToast.show();
+		}
+	}
 }

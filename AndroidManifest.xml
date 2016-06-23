@@ -25,11 +25,60 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.example.activity.LoginActivity"></activity>
-        <activity android:name="com.example.activity.AskActivity"></activity>
-    	<activity android:name="com.example.activity.CreateActivity"></activity>
-    	<activity android:name="com.example.activity.SaleActivity"></activity>
-    	<activity android:name="com.example.activity.MyselfActivity"></activity>
+        <activity android:name="com.example.activity.LoginActivity"
+            			android:configChanges="orientation|keyboardHidden"
+            			android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity android:name="com.example.activity.AskActivity"
+            			android:configChanges="orientation|keyboardHidden"
+            			android:windowSoftInputMode="adjustPan">
+        </activity>
+    	<activity android:name="com.example.activity.CreateActivity"
+            			android:configChanges="orientation|keyboardHidden"
+            			android:windowSoftInputMode="adjustPan">
+    	</activity>
+    	<activity android:name="com.example.activity.SaleActivity"
+            			android:configChanges="orientation|keyboardHidden"
+            			android:windowSoftInputMode="adjustPan">
+    	</activity>
+    	<activity android:name="com.example.activity.MyselfActivity"
+            			android:configChanges="orientation|keyboardHidden"
+            			android:windowSoftInputMode="adjustPan">
+    	</activity>
+    	<activity android:name="com.example.activity.GoodDetail"
+            			android:configChanges="orientation|keyboardHidden"
+            			android:windowSoftInputMode="adjustPan">
+    	</activity>
+    	<activity
+    	    android:name="com.example.activity.CreateAskActivity"
+    	    android:windowSoftInputMode="adjustPan"
+    	    android:configChanges="orientation|keyboardHidden">
+    	</activity>
+    	<activity
+    	    android:name="com.example.activity.CreateSaleActivity"
+    	    android:windowSoftInputMode="adjustPan"
+    	    android:configChanges="orientation|keyboardHidden">
+    	</activity>
+    	<activity
+    	    android:name="com.example.activity.RegisterActivity"
+    	    android:windowSoftInputMode="adjustPan"
+    	    android:configChanges="orientation|keyboardHidden" ></activity>
+    	<activity 
+    	    android:name="com.example.activity.ContactsActivity"
+    	    android:windowSoftInputMode="adjustPan"
+    	    android:configChanges="orientation|keyboardHidden">
+    	</activity>
+    	<activity
+    	    android:name="com.example.activity.PictureSelectorActivity"
+    	    android:windowSoftInputMode="adjustPan"
+    	    android:configChanges="orientation|keyboardHidden">
+    	</activity>
+    	<activity
+			android:name="com.example.activity.PublishNewsActivity" 
+			android:windowSoftInputMode="adjustPan"
+			android:configChanges="orientation|keyboardHidden"
+    	    >
+    	</activity>
     </application>
 
 </manifest>

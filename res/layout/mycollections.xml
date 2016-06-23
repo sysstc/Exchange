@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    
+<LinearLayout
+        android:id="@+id/mycollections_menu1"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/background"
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+		    android:id="@+id/mycollections_imageButton_back"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="10dp"
+		    android:background="#00000000"
+		    android:layout_gravity="center_vertical"
+		    android:src="@drawable/back" />
+        <TextView
+            android:id="@+id/mycollections_TextView_collections"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="50dp"
+            android:layout_gravity="center_vertical"           
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="我的收藏"
+	    	android:textStyle="bold"
+	    	android:textColor="#ffffff"
+            android:textIsSelectable="true"
+            android:textSize="20dp" />   
+    </LinearLayout>
+
+ <ScrollView
+        android:layout_below="@+id/mycollections_menu1"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:scrollbars="vertical"
+	    
+	    	>
+        
+  <LinearLayout 
+      android:id="@+id/mycollections_menu2_1"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:layout_alignParentRight="true"
+	  android:layout_alignParentLeft="true"
+      >
+      <ListView  
+    		android:id="@+id/mycollections_list"  
+    		android:layout_width="fill_parent"  
+    		android:layout_height="600dp"  
+    		
+    		
+    		>
+		   
+    		 
+		</ListView> 
+  </LinearLayout> 
+    
+     
+</ScrollView>
+</RelativeLayout>

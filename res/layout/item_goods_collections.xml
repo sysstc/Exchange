@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    
+<LinearLayout 
+    android:id="@+id/collectionitem_menu1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical"
+    android:background="#ecf0f1"
+        >
+      <LinearLayout 
+          android:id="@+id/collectionitem_menu1_1"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginLeft="5dp"
+          android:layout_marginRight="5dp"
+          android:layout_marginTop="5dp"
+          
+          android:background="#ffffff">
+          <ImageView 
+              android:id="@+id/collectionitem_imageView_goods"
+              android:layout_width="80dp"
+              android:layout_height="80dp"
+              android:src="@drawable/web2"
+              android:layout_marginLeft="5dp"
+              android:layout_marginRight="5dp"
+              android:layout_marginTop="5dp"
+              android:layout_marginBottom="5dp"/>
+          <LinearLayout 
+              android:id="@+id/collectionitem_menu1_1_1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="5dp"
+              android:layout_marginRight="5dp"
+              android:layout_marginTop="5dp"
+              android:layout_marginBottom="5dp"
+              android:orientation="vertical">
+              <TextView 
+                  android:id="@+id/collectionite_textView_goodsname"
+                  android:text="自行车"
+                  android:textSize="20dp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="10dp"
+                  android:textStyle="bold"
+                  android:layout_marginLeft="5dp"/>
+              <LinearLayout 
+                  android:id="@+id/collectionitem_menu1_1_1_1"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="8dp">
+                  <TextView 
+                      android:id="@+id/collectionitem_textView_sign"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="¥"
+                      android:textSize="18dp"
+                      android:textStyle="bold"
+                      android:textColor="#f67480" />
+                   <TextView 
+                      android:id="@+id/collectionitem_textView_money"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="200-300"
+                      android:textSize="18dp"
+                      android:textStyle="bold"
+                      android:textColor="#f67480" />
+              </LinearLayout>
+          </LinearLayout>
+          
+          <LinearLayout 
+            	android:layout_width="wrap_content"
+    			android:layout_height="fill_parent"
+    			android:layout_weight="1"
+    			android:layout_marginRight="10dp"
+    			android:layout_gravity="top"
+    			android:gravity="right"
+    			android:orientation="horizontal"
+            		>
+       			<ImageButton
+            		android:id="@+id/collectionitem_imageButton_massege"
+            		android:layout_width="30dp"
+            		android:layout_height="30dp"
+            		android:layout_gravity="top"
+      				android:background="#00000000"
+            		android:src="@drawable/massege"
+            		android:layout_marginTop="5dp" />
+       			<TextView
+	        		android:id="@+id/collectionitem_textView_massege"
+	        		android:layout_width="wrap_content"
+	        		android:layout_height="wrap_content"
+	        		android:gravity="right"
+	        		android:layout_gravity="top"
+	        		android:layout_marginTop="20dp"
+	        		android:layout_marginRight="10dp"
+	        		android:text="联系我"
+	        		android:textSize="10dp" />
+       			
+            
+        	</LinearLayout>
+          
+      </LinearLayout>
+        <LinearLayout 
+            android:id="@+id/collectionsitem_menu1_2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"           
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#ffffff">
+            
+            <ImageView
+            	android:id="@+id/item_imageView_userPhoto"
+            	android:layout_width="40dp"
+            	android:layout_height="40dp"
+            	android:layout_marginLeft="20dp"
+            	android:src="@drawable/photo1" />
+        
+        	<LinearLayout 
+        	    
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:orientation="horizontal"
+    			android:layout_gravity="center_vertical"
+    			android:layout_marginLeft="20dp"
+    		
+        			>
+        	
+       			<TextView
+	        		android:id="@+id/item_textView_userName"
+	        		android:layout_width="wrap_content"
+	        		android:layout_height="wrap_content"
+	        		android:layout_weight="1"
+	        		android:gravity="center"
+	        		android:layout_gravity="center_vertical"
+	        		android:text="小胖子"
+	        		android:textSize="15dp" />
+       		
+       			<LinearLayout 
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"
+    				android:orientation="horizontal"
+    				android:layout_marginLeft="100dp"   				
+    				android:layout_gravity="center_vertical"    				
+   			
+        			>
+        			<TextView
+	        			android:layout_width="wrap_content"
+	        			android:layout_height="wrap_content"
+	        			android:layout_weight="1"
+	        			android:gravity="center"
+	        			android:text="发布于"
+	        			android:textSize="10dp" />
+       			
+       				<TextView
+	        			android:id="@+id/item_textView_time"
+	        			android:layout_width="wrap_content"
+	        			android:layout_height="wrap_content"
+	        			android:layout_weight="1"
+	        			android:gravity="center"
+	        			android:text="2015-3-1"
+	        			android:textSize="10dp" />
+       			</LinearLayout>
+ 	
+        </LinearLayout>
+ </LinearLayout>
+</LinearLayout>
+</RelativeLayout>

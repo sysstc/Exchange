@@ -204,6 +204,7 @@
 	    	android:textColor="#ffffff"
 	    	android:textStyle="bold"
 	    	android:textSize="25dp"
+	    	android:onClick="submit"
 	    	android:text="求助于人" />
 
 		<Button
@@ -217,6 +218,7 @@
 	    	android:textColor="#ffffff"
 	    	android:textStyle="bold"
 	    	android:textSize="25dp"
+	    	android:onClick="submit"
 	    	android:text="我要出售" />
 	    
 	   </RelativeLayout>

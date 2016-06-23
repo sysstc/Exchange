@@ -1,4 +1,4 @@
-package com.example.async;
+package com.example.util;
 
 import android.graphics.Bitmap;
 import android.os.AsyncTask;

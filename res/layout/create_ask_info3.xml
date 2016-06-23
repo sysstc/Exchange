@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+	<Button
+   		android:id="@+id/askInfo3_button_ensure"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_height="40dp"
+        android:background="@drawable/background"
+        android:textColor="#ffffff"
+	    android:textStyle="bold"
+        android:text="确认创建" />
+	      	
+	<TextView
+    	android:id="@+id/askInfo3_TextView"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_marginLeft="20dp"
+    	android:layout_marginTop="20dp"
+    	android:layout_gravity="bottom"
+    	android:text="易/换"
+    	android:textColor="#f67480"
+    	android:textSize="25dp" />
+	
+    <ScrollView
+	      android:layout_width="fill_parent"
+	      android:layout_height="fill_parent"
+	      android:layout_marginLeft="10dp"
+	      android:layout_marginRight="10dp"
+	      android:layout_below="@+id/askInfo3_TextView"
+	      android:layout_above="@+id/askInfo3_button_ensure"
+	      android:scrollbars="vertical"
+	    
+	      >
+	      	   
+	      	<LinearLayout
+	      		android:id="@+id/create_askInfo3_menu"
+	      		android:layout_width="fill_parent"
+	      		android:layout_height="wrap_content"
+	      		android:layout_alignParentLeft="true"
+	      		android:layout_marginTop="10dp"
+	      		android:layout_marginLeft="10dp"
+	      		android:layout_marginRight="10dp"
+	      		android:background="#f2f2f2"
+	      		android:orientation="vertical" >
+
+    			<LinearLayout
+	    			android:id="@+id/create_askInfo3_menu1"
+	    			android:layout_width="fill_parent"
+	    			android:layout_height="wrap_content" 
+	    			android:layout_alignParentLeft="true"
+	    			android:gravity="center_horizontal"
+	    			android:layout_marginRight="20dp"
+	    			android:layout_marginLeft="20dp"
+	    			android:layout_marginTop="20dp"
+	    			android:orientation="horizontal" >
+
+    				<TextView
+    		    		android:id="@+id/askInfo3_textView_goodsname"
+    		    		android:layout_width="wrap_content"
+    		    		android:layout_height="wrap_content"
+    		   			android:layout_gravity="bottom"
+    		    		android:text="名称："
+    		    		android:textSize="18dp" />
+
+					<EditText
+             			android:id="@+id/askInfo3_editText_goodsname"
+             			android:layout_width="fill_parent"
+             			android:layout_height="wrap_content"
+             			android:layout_weight="1"
+             			android:layout_gravity="bottom"
+             			android:ems="10"
+             			android:hint="商品名称"
+             			android:background="@null"
+             			android:maxLength="10"
+             			android:textSize="18dp"
+             			android:singleLine="true"
+             			android:windowSoftInputMode="stateHidden" >
+            			<requestFocus />
+        			</EditText>
+	    		</LinearLayout>
+	    		
+    			<View
+        			android:layout_width="fill_parent"
+        			android:layout_height="0.85dp"
+        			android:layout_marginLeft="20dp"
+            		android:layout_marginRight="20dp"
+        			android:layout_alignParentLeft="true"
+        			android:background="#f67480" />	
+        		
+    			<LinearLayout
+	    			android:id="@+id/create_askInfo3_menu2"
+	    			android:layout_width="fill_parent"
+	    			android:layout_height="wrap_content"
+	    			android:layout_below="@+id/create_askInfo3_menu1"
+	    			android:layout_alignParentRight="true"
+	    			android:layout_alignParentLeft="true"
+	    			android:gravity="center_horizontal"
+	    			android:layout_marginRight="20dp"
+	    			android:layout_marginLeft="20dp"
+	    			android:layout_marginTop="20dp"
+	    			android:orientation="horizontal" 
+	    				>
+					
+    				<TextView
+    		    		android:id="@+id/askInfo3_textView_price"
+    		   			android:layout_width="wrap_content"
+    		    		android:layout_height="wrap_content"
+    		    		android:layout_gravity="bottom"
+    		    		android:text="出价："
+    		    		android:textSize="18dp" />
+
+					<EditText
+             			android:id="@+id/askInfo3_editText_price"
+             			android:layout_width="fill_parent"
+             			android:layout_height="wrap_content"
+             			android:layout_weight="1"
+             			android:layout_gravity="bottom"
+             			android:ems="10"
+             			android:hint="给出一个价格"
+             			android:background="@null"
+             			android:maxLength="10"
+             			android:textSize="18dp"
+             			android:singleLine="true"
+             			android:windowSoftInputMode="stateHidden" >
+            			<requestFocus />
+        			</EditText>
+    			</LinearLayout>
+    
+    			
+    
+    			<View
+        			android:layout_width="fill_parent"
+        			android:layout_height="0.85dp"
+        			android:layout_marginLeft="20dp"
+            		android:layout_marginRight="20dp"
+        			android:layout_alignParentLeft="true"
+        			android:background="#f67480" />	
+        		
+    			<LinearLayout
+	    			android:id="@+id/create_askInfo3_menu3"
+	    			android:layout_width="fill_parent"
+	    			android:layout_height="wrap_content"
+	    			android:layout_below="@+id/create_askInfo3_menu2"
+	    			android:layout_alignParentRight="true"
+	    			android:layout_alignParentLeft="true"
+	    			android:gravity="center_horizontal"
+	    			android:layout_marginRight="20dp"
+	    			android:layout_marginLeft="20dp"
+	    			android:layout_marginTop="20dp"
+	    			android:orientation="horizontal" >
+
+    				<TextView
+    		   		 	android:id="@+id/askInfo3_textView_place"
+    		    		android:layout_width="wrap_content"
+    		    		android:layout_height="wrap_content"
+    		    		android:layout_gravity="bottom"
+    		    		android:text="地点："
+    		    		android:textSize="18dp" />
+
+					<EditText
+             			android:id="@+id/askInfo3_editText_place"
+             			android:layout_width="fill_parent"
+             			android:layout_height="wrap_content"
+             			android:layout_weight="1"
+             			android:layout_gravity="bottom"
+             			android:ems="10"
+             			android:hint="填入所在校区"
+             			android:background="@null"
+             			android:maxLength="10"
+             			android:textSize="18dp"
+             			android:singleLine="true"
+             			android:windowSoftInputMode="stateHidden" >
+            			<requestFocus />
+        			</EditText>
+
+    			</LinearLayout>
+    
+    			<View
+        			android:layout_width="fill_parent"
+        			android:layout_height="0.85dp"
+        			android:layout_marginLeft="20dp"
+            		android:layout_marginRight="20dp"
+        			android:layout_alignParentLeft="true"
+        			android:background="#f67480" />	
+        		
+    			<TextView
+    		    		android:id="@+id/askInfo3_textView_describe"
+    		    		android:layout_width="wrap_content"
+    		    		android:layout_height="wrap_content"
+    		    		android:layout_marginTop="20dp"
+    		    		android:layout_marginLeft="20dp"
+    		    		android:layout_marginBottom="5dp"
+    		    		android:layout_gravity="bottom"
+    		    		android:text="描述:"
+    		    		android:textSize="18dp" />
+        		
+    			<LinearLayout
+	    			android:id="@+id/create_askInfo3_menu4"
+	    			android:layout_width="fill_parent"
+	    			android:layout_height="wrap_content"
+	    			android:layout_below="@+id/create_askInfo3_menu3"
+	    			android:layout_alignParentRight="true"
+	    			android:layout_alignParentLeft="true"
+	    			android:gravity="center_horizontal"
+	    			android:layout_marginRight="10dp"
+	    			android:layout_marginLeft="10dp"
+	    			android:layout_marginBottom="20dp"
+	    			android:background="#ffccbc"
+	    			android:orientation="vertical" >
+    				<EditText
+             			android:id="@+id/askInfo3_editText_describe"
+             			android:layout_width="fill_parent"
+             			android:layout_height="200dp"
+             			android:background="@null"
+             			android:layout_weight="1"
+             			android:layout_marginLeft="10dp"
+             			android:layout_marginRight="10dp"
+            			android:layout_marginTop="10dp"
+            			android:layout_marginBottom="10dp"
+             			android:layout_gravity="bottom"
+             			android:ems="10"
+             			android:textColor="#727272"
+             			android:textSize="15dp"
+             			android:maxLength="200"
+             			android:inputType="textMultiLine"
+   						android:gravity="left|top"
+   						android:minLines="6"
+             			android:windowSoftInputMode="stateHidden" >
+            			<requestFocus />
+        			</EditText>
+        		
+ 			   	</LinearLayout>	
+    	
+    		</LinearLayout>
+  
+	</ScrollView>
+</RelativeLayout>

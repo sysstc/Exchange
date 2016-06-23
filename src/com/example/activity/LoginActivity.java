@@ -21,7 +21,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.TextureView;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -29,6 +31,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends BaseActivity{
@@ -37,17 +40,30 @@ public class LoginActivity extends BaseActivity{
 	private Button ask_button_create;
 	private ImageView img_userhead;
 	private String username;
+	private TextView create_TextView_register;
 	private String password;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO 自动生成的方法存根
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.login);
+
 		login_editText_user = (EditText) findViewById(R.id.login_editText_user);
 		login_editText_password = (EditText) findViewById(R.id.login_editText_password);
 		ask_button_create = (Button) findViewById(R.id.ask_button_create);
 		img_userhead = (ImageView) findViewById(R.id.img_userhead);
-		
+		create_TextView_register = (TextView) findViewById(R.id.create_TextView_register);
+		create_TextView_register.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO 自动生成的方法存根
+				Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
 		login_editText_password.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener() {
 		@Override
 			public void onFocusChange(View v, boolean hasFocus) {
@@ -94,6 +110,7 @@ public class LoginActivity extends BaseActivity{
 						public void onSuccess(List<User> list) {
 							// TODO 自动生成的方法存根
 							User user = list.get(0);
+							savePreferenceId(user.getUserid());
 							savePreferenceName(username);
 							Toast.makeText(LoginActivity.this, "User name = "+username, Toast.LENGTH_SHORT).show();
 							if(!user.getUsername().isEmpty()){

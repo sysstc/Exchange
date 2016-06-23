@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.bean.GoodsInformation;
 import com.example.bean.User;
@@ -25,8 +26,12 @@ public class ImagesUrl {
 	HashMap<String, String> map = new HashMap<String,String>();
 
 	public String[] urls = null;
+	public static List<Map<String, String>> GOODSMAP = new ArrayList<Map<String, String>>();
+	private Map<String, String> good_map_temp = new HashMap<String,String>();
+	
 	private int i = 0;
 	private ArrayList<ListViewItem>arrayList;
+	
 	ListView listView;
 	Context context;
 	ImageLoader imageLoader;
@@ -41,27 +46,57 @@ public class ImagesUrl {
 	String goodimg2Str;
 	String goodimg3Str;
 	
-	public ImagesUrl(Context mContext, ListView mListView,ImageLoader mImageLoader){
+	String goodsid;
+	Integer userid;
+	Integer currentUserid;
+	
+	
+	public String getGoodsid() {
+		return goodsid;
+	}
+
+	public void setGoodsid(String goodsid) {
+		this.goodsid = goodsid;
+	}
+
+	public Integer getUserid() {
+		return userid;
+	}
+
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
+
+	public ImagesUrl(Context mContext, ListView mListView,ImageLoader mImageLoader,Integer currentUserid){
 
 		listView = mListView;
 		context = mContext;
 		imageLoader = mImageLoader;
-		
+		GOODSMAP = new ArrayList<Map<String, String>>();
 		arrayList  = new ArrayList<ListViewItem>();
-		
-		adapter = new ListViewAdapter(arrayList,context,imageLoader);
+		this.currentUserid = currentUserid;
+		adapter = new ListViewAdapter(arrayList,context,imageLoader,currentUserid);
 		listView.setAdapter(adapter);
 			
 		BmobQuery<GoodsInformation> bmobQuery = new BmobQuery<GoodsInformation>();
 		bmobQuery.order("-goodsclick");
-		bmobQuery.setLimit(10);
+		bmobQuery.setLimit(50);
 		dataList = new ArrayList<HashMap<String,String>>();
 		map = new HashMap<String,String>();
 		bmobQuery.findObjects(context, new FindListener<GoodsInformation>() {
+			
 			@Override
 			public void onSuccess(List<GoodsInformation> goodsInformations) {
+				GOODSMAP = new ArrayList<Map<String, String>>();
+				
 				// TODO 自动生成的方法存根
 				for(GoodsInformation goodsInformation:goodsInformations){
+					good_map_temp = new HashMap<String,String>();
+					good_map_temp.put("guserid", String.valueOf(goodsInformation.getUserid()));
+					good_map_temp.put("ggoodsid", goodsInformation.getGoodsid());
+					good_map_temp.put("ggoodtype", String.valueOf(goodsInformation.getType()));
+					GOODSMAP.add(good_map_temp);
+					
 					
 					dataList = new ArrayList<HashMap<String,String>>();
 					map = new HashMap<String,String>();
@@ -71,9 +106,16 @@ public class ImagesUrl {
 					String goodsname;
 					String goodsdate;
 					Integer guserid;
+					String goodsid = goodsInformation.getGoodsid();
+					map.put("goodsid", goodsid);
+					
+					Integer userid = goodsInformation.getUserid();
+					map.put("userid", String.valueOf(userid));
+					
+					map.put("goodsid", goodsInformation.getGoodsid());
+					
+					
 					map.put("typeid", String.valueOf(goodsInformation.getType()));
-					guserid = goodsInformation.getUserid();
-					map.put("userid", guserid+"");
 					goodsdate = goodsInformation.getCreatedAt();
 					
 					if(goodsInformation.goodsimg1!=null){
@@ -101,8 +143,6 @@ public class ImagesUrl {
 					Message msg = new Message();
 					msg.what = 1;
 					msg.obj = map;
-					Log.i("ImagesURL", map.get("goodimg1"));
-					Log.i("ImagesURL", map.get("goodimg2"));
 					handler.sendMessage(msg);
 				}
 			}
@@ -128,29 +168,37 @@ public class ImagesUrl {
 				Log.i("ImagesUrl", "maps 1111size = "+maps.size());
 				listViewItem = null;
 				Log.i("info", "goodnameStr = "+maps.get("goodname"));
-				if(maps.size()==4){
+				setGoodsid(maps.get("goodsid"));
+				setUserid(Integer.valueOf(maps.get("userid")));
+				Log.i("info","goodsid = "+maps.get("goodsid")+"userid = "+maps.get("userid"));
+				
+				if(maps.size()==5){
 							listViewItem = new ListViewItem(Integer.valueOf(maps.get("typeid")),
 									maps.get("goodname"),maps.get("goodsdate"),null
-									,null,null,null,null);
+									,null,null,null,null,maps.get("goodsid"),
+									Integer.valueOf(maps.get("typeid")));
 							arrayList.add(listViewItem);
 							adapter.notifyDataSetChanged();
-					
-				}else if(maps.size()==5){
-							listViewItem = new ListViewItem(Integer.valueOf(maps.get("typeid")),
-									maps.get("goodname"),maps.get("goodsdate"),null
-									,null,maps.get("goodimg1"),null,null);
-							arrayList.add(listViewItem);
-							adapter.notifyDataSetChanged();
+							
 				}else if(maps.size()==6){
 							listViewItem = new ListViewItem(Integer.valueOf(maps.get("typeid")),
 									maps.get("goodname"),maps.get("goodsdate"),null
-									,null,maps.get("goodimg1"),maps.get("goodimg2"),null);
+									,null,maps.get("goodimg1"),null,null,maps.get("goodsid"),
+									Integer.valueOf(maps.get("typeid")));
 							arrayList.add(listViewItem);
 							adapter.notifyDataSetChanged();
 				}else if(maps.size()==7){
 							listViewItem = new ListViewItem(Integer.valueOf(maps.get("typeid")),
 									maps.get("goodname"),maps.get("goodsdate"),null
-									,null,maps.get("goodimg1"),maps.get("goodimg2"),maps.get("goodimg3"));
+									,null,maps.get("goodimg1"),maps.get("goodimg2"),null,
+									maps.get("goodsid"),Integer.valueOf(maps.get("typeid")));
+							arrayList.add(listViewItem);
+							adapter.notifyDataSetChanged();
+				}else if(maps.size()==8){
+							listViewItem = new ListViewItem(Integer.valueOf(maps.get("typeid")),
+									maps.get("goodname"),maps.get("goodsdate"),null
+									,null,maps.get("goodimg1"),maps.get("goodimg2"),maps.get("goodimg3"),
+									maps.get("goodsid"),	Integer.valueOf(maps.get("typeid")));
 							arrayList.add(listViewItem);
 							adapter.notifyDataSetChanged();
 				}				
