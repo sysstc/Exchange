@@ -36,6 +36,7 @@ public class MyselfActivity extends BaseActivity{
 	private ImageButton imgbutton_exit;
 	private String username;
 	private String userheadUrl;
+	private LinearLayout myself_menu6;
 	
 	private LinearLayout myself_menu3;
 	@Override
@@ -48,6 +49,16 @@ public class MyselfActivity extends BaseActivity{
 		myself_textView_name2 = (TextView) findViewById(R.id.myself_textView_name2);
 		myself_imageView = (ImageView) findViewById(R.id.myself_imageView);
 		myself_menu3 = (LinearLayout) findViewById(R.id.myself_menu3);
+		myself_menu6=(LinearLayout) findViewById(R.id.myself_menu6);
+		myself_menu6.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO 自动生成的方法存根
+				Intent intent = new Intent(MyselfActivity.this,SchoolCertificationActivity.class);
+				startActivity(intent);
+			}
+		});
 		imgbutton_exit = (ImageButton) findViewById(R.id.imgbutton_exit);
 		if (!getPreferenceName().isEmpty()) {
 			username = getPreferenceName();	
