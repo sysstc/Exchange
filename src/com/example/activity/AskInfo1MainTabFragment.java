@@ -103,6 +103,7 @@ public class AskInfo1MainTabFragment extends Fragment{
 				goodsInformation.setGoodprice(Float.valueOf(price));
 				goodsInformation.setGoodsdescribe(describe);
 				goodsInformation.setGoodsclick(0);
+				goodsInformation.setDealtype(0);
 				goodsInformation.save(context, new SaveListener() {
 					
 					@Override

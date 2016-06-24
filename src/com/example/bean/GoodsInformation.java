@@ -18,13 +18,16 @@ public class GoodsInformation extends BmobObject{
 	public Integer type;
 	public Integer goodsclick;
 	public Integer userid;
-	
+	public Integer dealtype;
 	public GoodsInformation(){
 		super();
 	}
+	/**
+	 * 商品序号 商品名字 价格 描述 图片1 图片2 图片3 图片4 图片5 买3/卖1/换2/租0 点赞次数 用户id 求0/卖1
+	 * */
 	public GoodsInformation(String goodsid, String goodsname,float goodprice,String goodsdescribe,
 			BmobFile goodsimg1, BmobFile goodsimg2, BmobFile goodsimg3,
-			BmobFile goodsimg4, BmobFile goodsimg5,Integer type, Integer goodsclick,Integer userid) {
+			BmobFile goodsimg4, BmobFile goodsimg5,Integer type, Integer goodsclick,Integer userid,Integer dealtype) {
 		super();
 		this.goodsid = goodsid;
 		this.goodsname = goodsname;
@@ -38,6 +41,7 @@ public class GoodsInformation extends BmobObject{
 		this.goodprice = goodprice;
 		this.goodsclick = goodsclick;
 		this.userid = userid;
+		this.dealtype = dealtype;
 		this.goodsdescribe = goodsdescribe;
 	}
 	
@@ -124,4 +128,11 @@ public class GoodsInformation extends BmobObject{
 	public void setGoodsclick(Integer goodsclick) {
 		this.goodsclick = goodsclick;
 	}
+	public Integer getDealtype() {
+		return dealtype;
+	}
+	public void setDealtype(Integer dealtype) {
+		this.dealtype = dealtype;
+	}
+	
 }

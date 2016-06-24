@@ -36,6 +36,7 @@
             	android:background="@null"
             	android:ems="10"
             	android:hint="search!"
+            	android:imeOptions="actionSearch"
             	android1:textSize="15dp"
             	android:singleLine="true"
              		>

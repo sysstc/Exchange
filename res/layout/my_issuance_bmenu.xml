@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="#eee"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="horizontal" 
+        android:layout_height="wrap_content"
+       	android:layout_marginTop="10dp" >
+
+        <LinearLayout
+            android:id="@+id/issuance_sale"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="submit" >
+            
+			<ImageButton
+			    android:id="@+id/issuance_imageButton_sale"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="#00000000"
+			    android:src="@drawable/issuancesale1"
+			     />
+			
+            <TextView
+                android:id="@+id/issuance_textView_sale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="我发布的卖"
+                android:textColor="#f67480"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/issuance_ask"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center" 
+            android:onClick="submit">
+
+            <ImageButton
+			    android:id="@+id/issuance_imageButton_ask"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="#00000000"
+			    android:src="@drawable/issuanceask" />
+            
+            <TextView
+                android:id="@+id/issuance_textView_ask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="我发布的求" 
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>

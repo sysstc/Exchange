@@ -146,6 +146,8 @@ public class CreateAskActivity extends FragmentActivity {
 		username = intent.getStringExtra("username");
 		userid = Integer.valueOf(intent.getStringExtra("userid"));
 		
+		Log.i("info","CreateActivity id = "+userid);
+	
 		mDatas.add(tab01);
 		mDatas.add(tab02);
 		mDatas.add(tab03);

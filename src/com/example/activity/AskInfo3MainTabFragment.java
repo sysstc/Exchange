@@ -72,6 +72,7 @@ public class AskInfo3MainTabFragment extends Fragment{
 				exchange.setExchangeaddress(place);
 				exchange.setExchangetag(0);
 				exchange.setGoodsid(goodsid);
+				
 				exchange.save(context,new SaveListener() {
 					@Override
 					public void onSuccess() {
@@ -88,6 +89,7 @@ public class AskInfo3MainTabFragment extends Fragment{
 				goodsInformation.setGoodsid(goodsid);
 				goodsInformation.setType(2);
 				goodsInformation.setGoodsclick(0);
+				goodsInformation.setDealtype(0);
 				goodsInformation.setUserid(userid);
 				goodsInformation.setGoodsdescribe(describe);
 				goodsInformation.save(context, new SaveListener() {

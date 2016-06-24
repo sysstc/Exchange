@@ -74,7 +74,7 @@
     	    android:configChanges="orientation|keyboardHidden">
     	</activity>
     	<activity
-			android:name="com.example.activity.PublishNewsActivity" 
+			android:name="com.example.activity.IssuanceActivity" 
 			android:windowSoftInputMode="adjustPan"
 			android:configChanges="orientation|keyboardHidden"
     	    >

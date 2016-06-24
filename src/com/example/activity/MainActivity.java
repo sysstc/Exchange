@@ -28,6 +28,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.view.KeyEvent;
+import android.view.View.OnKeyListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -54,6 +55,7 @@ public class MainActivity extends BaseActivity implements OnScrollListener{
 	private Button home_button_ask;
 	private Button home_button_creat;
 	private EditText home_editText_search;
+	private TextView home_textview_hot;
 	private Integer currentUserid;
 	
 	@Override
@@ -66,19 +68,21 @@ public class MainActivity extends BaseActivity implements OnScrollListener{
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		String username = getPreferenceName();
 		currentUserid = getPreferenceId();
-
+		Log.i("info", "MainActivity userid = "+currentUserid);
+		home_textview_hot = (TextView) findViewById(R.id.home_textview_hot);
 		home_editText_search = (EditText) findViewById(R.id.home_editText_search);
 		
 		home_editText_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-			
-			@Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-				// TODO 自动生成的方法存根
-				if(actionId==EditorInfo.IME_ACTION_SEND||(event!=null&&event.getKeyCode()==KeyEvent.KEYCODE_ENTER)){
-					Toast.makeText(MainActivity.this, "This is a toast", Toast.LENGTH_SHORT).show();
-				}
-				return false;
-			}
+			public boolean onEditorAction(TextView v, int actionId,KeyEvent event)  {                          
+				if (!home_editText_search.getText().toString().equals("")&&!home_editText_search.getText().toString().contains(" ")&&(actionId==EditorInfo.IME_ACTION_SEND ||(event!=null&&event.getKeyCode()== KeyEvent.KEYCODE_ENTER))) {             //   
+					String findwords = home_editText_search.getText().toString();
+					home_textview_hot.setText("搜索的商品");
+					ImagesUrl imageUrls = new ImagesUrl(MainActivity.this, hotgoodlists,mImageLoader,currentUserid,2,findwords);
+					toast("11111111111111111");//do something;              
+					return true;             
+				}               
+			return false;           
+			}       
 		});
 		
 		home_button_sale = (Button) findViewById(R.id.home_button_sale);
@@ -140,7 +144,7 @@ public class MainActivity extends BaseActivity implements OnScrollListener{
 		});
 		
 		ArrayList<ListViewItem>arrayList = new ArrayList<ListViewItem>();
-		ImagesUrl imageUrls = new ImagesUrl(this, hotgoodlists,mImageLoader,currentUserid);
+		ImagesUrl imageUrls = new ImagesUrl(this, hotgoodlists,mImageLoader,currentUserid,1,null);
 	}
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
@@ -202,7 +206,7 @@ public class MainActivity extends BaseActivity implements OnScrollListener{
 			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);
 			finish();
 			break;
-		case R.id.home_imageButton_creat:
+		case R.id.home_imageButton_create:
 			Intent intent3 = new Intent(this,CreateActivity.class);
 			startActivity(intent3);
 			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);

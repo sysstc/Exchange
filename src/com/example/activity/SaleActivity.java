@@ -6,6 +6,7 @@ import java.util.List;
 import cn.bmob.v3.BmobQuery;
 
 import com.example.adapter.ImageList;
+import com.example.adapter.ImagesUrl;
 import com.example.adapter.MyRecyclerAdapter;
 import com.example.bean.GoodsInformation;
 import com.example.layout.ItemGridLayoutManager;
@@ -19,9 +20,13 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SaleActivity extends BaseActivity{
@@ -29,7 +34,12 @@ public class SaleActivity extends BaseActivity{
 	private ImageLoader mImageLoader;//com.nostra13.universalimageloader.core.ImageLoader
 	private RecyclerView mRecyclerView;
     private List<String> lists;
-    
+    private Integer userid;
+    private EditText sale_editText_search;
+    /**
+     * 
+     * 
+     * */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
@@ -39,7 +49,9 @@ public class SaleActivity extends BaseActivity{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.sale);
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+		userid = getPreferenceId();
 		sale_button_create = (Button) findViewById(R.id.sale_button_create);
+	
 		sale_button_create.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -48,22 +60,30 @@ public class SaleActivity extends BaseActivity{
 				Intent intent = new Intent(SaleActivity.this,CreateSaleActivity.class);
 				startActivity(intent);
 			}
+		});	
+		sale_editText_search = (EditText) findViewById(R.id.sale_editText_search);
+		sale_editText_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+			public boolean onEditorAction(TextView v, int actionId,KeyEvent event)  {                          
+				if (!sale_editText_search.getText().toString().equals("")&&!sale_editText_search.getText().toString().contains(" ")&&(actionId==EditorInfo.IME_ACTION_SEND ||(event!=null&&event.getKeyCode()== KeyEvent.KEYCODE_ENTER))) {             //   
+					   String findwords = sale_editText_search.getText().toString();
+					   ImageList imageList = new ImageList(SaleActivity.this,1,mRecyclerView,mImageLoader,findwords);
+					//ImagesUrl imageUrls = new ImagesUrl(SaleActivity.this, hotgoodlists,mImageLoader,userid,0,findwords);
+					   toast("11111111111111111");//do something;              
+					return true;             
+				}               
+			return false;           
+			}       
 		});
-   	    initData();
+		initData();
 	   
 		
 	}
 	private void initData() {
-/*        lists = new ArrayList();
-
-        for (int i = 0; i < 13; i++) {
-            lists.add("" + i);
-        }*/
 		mImageLoader = ImageLoader.getInstance();
 		mRecyclerView = (RecyclerView) this.findViewById(R.id.recyclerView);
-        ImageList imageList = new ImageList(this,0,mRecyclerView,mImageLoader);
+		
+        ImageList imageList = new ImageList(this,1,mRecyclerView,mImageLoader,null);
         mRecyclerView.setLayoutManager(new ItemGridLayoutManager(this, 2));//设置RecyclerView布局管理器为2列垂直排布        
-        
     }
 	
 	public void submit(View v){

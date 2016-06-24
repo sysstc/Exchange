@@ -55,6 +55,7 @@ public class ListViewAdapter extends BaseAdapter{
 		this.mImageLoader = imageLoader;
 		int deafualtImageId = R.drawable.ic_launcher;
 		this.currentUserid = currentUserid;
+		Log.i("info", "ListViewAdapter userid = "+currentUserid);
 		mDisplayImageOptions = new DisplayImageOptions.Builder()
 												.showStubImage(deafualtImageId)//在图片加载的时候调用到
 												.showImageForEmptyUri(deafualtImageId)
@@ -117,6 +118,7 @@ public class ListViewAdapter extends BaseAdapter{
 			
 			BmobQuery<Collections> query_collect = new BmobQuery<Collections>();
 			query_collect.addWhereEqualTo("userid", currentUserid);
+			Log.i("info", "ListViewAdapter userid = "+currentUserid);
 			query_collect.addWhereEqualTo("goodsid", mArrayList.get(position).goodsid);
 			query_collect.findObjects(mContext,new FindListener<Collections>() {
 				@Override
@@ -143,7 +145,7 @@ public class ListViewAdapter extends BaseAdapter{
 			
 			BmobQuery<Likeit> query_likeit = new BmobQuery<Likeit>();
 			query_likeit.addWhereEqualTo("userid", currentUserid);
-			
+			Log.i("info", "ListViewAdapter userid = "+currentUserid);
 			query_likeit.addWhereEqualTo("goodsid", mArrayList.get(position).goodsid);
 			
 			query_likeit.findObjects(mContext, new FindListener<Likeit>() {

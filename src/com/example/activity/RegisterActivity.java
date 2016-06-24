@@ -385,7 +385,7 @@ public class RegisterActivity extends BaseActivity {
 			public void onSuccess() {
 				// TODO 自动生成的方法存根
 				savePreferenceName(register_editText_user.getText().toString());
-				Intent intent = new Intent(RegisterActivity.this,MyselfActivity.class);
+				Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
 				startActivity(intent);
 				finish();
 				Toast.makeText(RegisterActivity.this, "384-----创建数据成功"+obj.getObjectId(), Toast.LENGTH_SHORT).show();

@@ -112,7 +112,7 @@ public class LoginActivity extends BaseActivity{
 							User user = list.get(0);
 							savePreferenceId(user.getUserid());
 							savePreferenceName(username);
-							Toast.makeText(LoginActivity.this, "User name = "+username, Toast.LENGTH_SHORT).show();
+							Log.i("info", "User ID = "+user.getUserid());
 							if(!user.getUsername().isEmpty()){
 							
 								Intent intent = new Intent(LoginActivity.this,MainActivity.class);

@@ -16,6 +16,7 @@ import com.example.bean.GoodsInformation;
 import com.example.bean.User;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import c.well;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.datatype.BmobFile;
@@ -66,8 +67,10 @@ public class ImagesUrl {
 	public void setUserid(Integer userid) {
 		this.userid = userid;
 	}
-
-	public ImagesUrl(Context mContext, ListView mListView,ImageLoader mImageLoader,Integer currentUserid){
+/**
+ * 最后一位表示的是请求的数据是求的(0)还是卖的(1)或者是求和卖都要的(2)
+ * */
+	public ImagesUrl(Context mContext, ListView mListView,ImageLoader mImageLoader,Integer currentUserid,int dealType,String findWords){
 
 		listView = mListView;
 		context = mContext;
@@ -75,22 +78,53 @@ public class ImagesUrl {
 		GOODSMAP = new ArrayList<Map<String, String>>();
 		arrayList  = new ArrayList<ListViewItem>();
 		this.currentUserid = currentUserid;
+		Log.i("info", "ImagesUrl userid = "+currentUserid);
 		adapter = new ListViewAdapter(arrayList,context,imageLoader,currentUserid);
 		listView.setAdapter(adapter);
-			
-		BmobQuery<GoodsInformation> bmobQuery = new BmobQuery<GoodsInformation>();
-		bmobQuery.order("-goodsclick");
-		bmobQuery.setLimit(50);
 		dataList = new ArrayList<HashMap<String,String>>();
 		map = new HashMap<String,String>();
+		
+		List<BmobQuery<GoodsInformation>> queries = new ArrayList<BmobQuery<GoodsInformation>>();
+		
+		BmobQuery<GoodsInformation> bmobQuery1 = new BmobQuery<GoodsInformation>();
+		//根据点击率排序且控制显示50个商品 与外部and
+		bmobQuery1.order("-goodsclick");
+		bmobQuery1.setLimit(50);
+		queries.add(bmobQuery1);
+		//判断需要的是求信息还是卖信息 与外部and
+		if(dealType==1||dealType==0){
+			BmobQuery<GoodsInformation> bmobQuery2 = new BmobQuery<GoodsInformation>();
+			if(dealType==1)
+				bmobQuery2.addWhereEqualTo("dealtype", 1);
+			else if(dealType == 0)
+				bmobQuery2.addWhereEqualTo("dealtype", 0);
+			queries.add(bmobQuery2);	
+		}
+		Log.d("info", "dealType = "+dealType);
+		//找包含查询词的内容 与外部and 与内部or
+		if(findWords!=null){
+			List<BmobQuery<GoodsInformation>> word_query = new ArrayList<BmobQuery<GoodsInformation>>();
+			BmobQuery<GoodsInformation> bmobQuery3 = new BmobQuery<GoodsInformation>();
+			bmobQuery3.addWhereContains("goodsname", findWords);
+			BmobQuery<GoodsInformation> bmobQuery4 = new BmobQuery<GoodsInformation>();
+			bmobQuery4.addWhereContains("goodsdescribe", findWords);
+			word_query.add(bmobQuery3);
+			word_query.add(bmobQuery4);
+			BmobQuery<GoodsInformation> mainQuery = new BmobQuery<GoodsInformation>();
+			BmobQuery<GoodsInformation> or = mainQuery.or(word_query);
+			queries.add(or);
+		}
+		BmobQuery<GoodsInformation> bmobQuery = new BmobQuery<GoodsInformation>();
+		bmobQuery.and(queries);
 		bmobQuery.findObjects(context, new FindListener<GoodsInformation>() {
 			
 			@Override
 			public void onSuccess(List<GoodsInformation> goodsInformations) {
 				GOODSMAP = new ArrayList<Map<String, String>>();
-				
+				Log.i("info", "goodsInformations size = "+goodsInformations.size());
 				// TODO 自动生成的方法存根
 				for(GoodsInformation goodsInformation:goodsInformations){
+			
 					good_map_temp = new HashMap<String,String>();
 					good_map_temp.put("guserid", String.valueOf(goodsInformation.getUserid()));
 					good_map_temp.put("ggoodsid", goodsInformation.getGoodsid());

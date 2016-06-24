@@ -54,6 +54,7 @@ public class CreateActivity extends BaseActivity{
 			Intent intent5 = new Intent(CreateActivity.this,CreateAskActivity.class);
 			username = getPreferenceName();
 			userid = getPreferenceId();
+			Log.i("info","CreateActivity id = "+userid);
 			intent5.putExtra("userid", String.valueOf(userid));
 			intent5.putExtra("username", username);
 			startActivity(intent5);

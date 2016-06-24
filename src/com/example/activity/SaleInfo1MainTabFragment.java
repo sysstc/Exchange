@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import com.example.bean.GoodsInformation;
+import com.example.bean.Rent;
 
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobFile;
@@ -197,18 +198,18 @@ public class SaleInfo1MainTabFragment extends Fragment
 						int bmobfile_size = bmobfile.size();
 						Log.d("info", "bmobfile_size = "+bmobfile_size);
 						if(bmobfile_size==1)
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), null, null, null, null, 1, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), null, null, null, null, 0, 0, userid,1));
 						else if(bmobfile_size==2){
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), null, null, null, 1, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), null, null, null, 0, 0, userid,1));
 						}
 						else if(bmobfile_size==3){
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), null, null, 1, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), null, null, 0, 0, userid,1));
 						}
 						else if(bmobfile_size==4){
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), bmobfile.get(3), null, 1, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), bmobfile.get(3), null, 0, 0, userid,1));
 						}
 						else if(bmobfile_size==5){
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), bmobfile.get(3), bmobfile.get(4), 1, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), bmobfile.get(3), bmobfile.get(4), 0, 0, userid,1));
 						}
 						}
 					}
@@ -227,14 +228,35 @@ public class SaleInfo1MainTabFragment extends Fragment
 			}
 		});
 	}
-	private void insertObject(final BmobObject obj) {
+	private void insertObject(final GoodsInformation goods) {
 		// TODO 自动生成的方法存根
-		obj.save(getActivity(),new SaveListener() {
+		goods.save(getActivity(),new SaveListener() {
 			
 			@Override
 			public void onSuccess() {
 				// TODO 自动生成的方法存根
 				Toast.makeText(getActivity(), "上传成功", Toast.LENGTH_SHORT).show();
+				Rent rent = new Rent();
+				rent.setUserid(goods.userid);
+				rent.setRentdealtag(1);
+				rent.setGoodsid(goods.goodsid);
+				rent.setRentstart(time);
+				rent.setRenttag(0);
+				rent.setRentplace(place);
+				rent.save(getActivity(), new SaveListener() {
+					
+					@Override
+					public void onSuccess() {
+						// TODO 自动生成的方法存根
+						Log.i("info", "租消息发布成功");
+					}
+					
+					@Override
+					public void onFailure(int arg0, String arg1) {
+						// TODO 自动生成的方法存根
+						Log.i("info", arg0+arg1+"租消息发布失败");
+					}
+				});
 			}
 			
 			@Override

@@ -31,8 +31,11 @@ public class ImageList {
 	private MyRecyclerAdapter adapter;
 	private ImageLoader imageLoader;
 	private HashMap<String, String> maps;
-	//参数：当前activity的Context，label表示是求页面还是卖页面
-	public ImageList(Context mContext,int label,RecyclerView mRecyclerView,ImageLoader mImageLoader) {
+	/**
+	 * 参数：当前activity的Context，label表示是求页面(0)还是卖页面(1)
+	 * 
+	*/
+	public ImageList(Context mContext,int label,RecyclerView mRecyclerView,ImageLoader mImageLoader,String findwords) {
 		// TODO 自动生成的构造函数存根
 		this.context = mContext;
 		this.recyclerView = mRecyclerView;
@@ -61,10 +64,31 @@ public class ImageList {
 				Toast.makeText(context, "点击了："+dataList.get(position).getGgoodtype(), Toast.LENGTH_SHORT).show();
 			}
 		});
+		List<BmobQuery<GoodsInformation>> main_query = new ArrayList<BmobQuery<GoodsInformation>>();
+		//排序以及判断求/卖  与外部and关系
+		BmobQuery<GoodsInformation> query_goods1 = new BmobQuery<GoodsInformation>();
+		query_goods1.order("-goodsclick");
+		if(label==1)
+			query_goods1.addWhereEqualTo("dealtype", 1);
+		else if(label==0)
+			query_goods1.addWhereEqualTo("dealtype", 0);
+		main_query.add(query_goods1);
 		
-		BmobQuery<GoodsInformation> query_goods = new BmobQuery<GoodsInformation>();
-		query_goods.order("-goodsclick");
-		query_goods.findObjects(context, new FindListener<GoodsInformation>() {
+		if(findwords!=null){//内部或，外部与
+			List<BmobQuery<GoodsInformation>> word_query = new ArrayList<BmobQuery<GoodsInformation>>();
+			BmobQuery<GoodsInformation> bmobQuery3 = new BmobQuery<GoodsInformation>();
+			bmobQuery3.addWhereContains("goodsname", findwords);
+			BmobQuery<GoodsInformation> bmobQuery4 = new BmobQuery<GoodsInformation>();
+			bmobQuery4.addWhereContains("goodsdescribe", findwords);
+			word_query.add(bmobQuery3);
+			word_query.add(bmobQuery4);
+			BmobQuery<GoodsInformation> mainQuery = new BmobQuery<GoodsInformation>();
+			BmobQuery<GoodsInformation> or = mainQuery.or(word_query);
+			main_query.add(or);
+		}
+		BmobQuery<GoodsInformation> goodQuery = new BmobQuery<GoodsInformation>();
+		goodQuery.and(main_query);
+		goodQuery.findObjects(context, new FindListener<GoodsInformation>() {
 			@Override
 			public void onSuccess(List<GoodsInformation> goodsInformations) {
 				// TODO 自动生成的方法存根

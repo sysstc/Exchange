@@ -14,6 +14,8 @@ import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadBatchListener;
 
+import com.example.bean.Deal;
+import com.example.bean.Exchange;
 import com.example.bean.GoodsInformation;
 
 import android.content.Intent;
@@ -177,18 +179,18 @@ public class SaleInfo3MainTabFragment extends Fragment
 						int bmobfile_size = bmobfile.size();
 						Log.d("info", "bmobfile_size = "+bmobfile_size);
 						if(bmobfile_size==1)
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), null, null, null, null, 2, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), null, null, null, null, 2, 0, userid,1));
 						else if(bmobfile_size==2){
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), null, null, null, 2, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), null, null, null, 2, 0, userid,1));
 						}
 						else if(bmobfile_size==3){
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), null, null, 2, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), null, null, 2, 0, userid,1));
 						}
 						else if(bmobfile_size==4){
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), bmobfile.get(3), null, 2, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), bmobfile.get(3), null, 2, 0, userid,1));
 						}
 						else if(bmobfile_size>=5){
-							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), bmobfile.get(3), bmobfile.get(4), 2, 0, userid));
+							insertObject(new GoodsInformation(goodsid, goodsname, Float.parseFloat(price), describe, bmobfile.get(0), bmobfile.get(1), bmobfile.get(2), bmobfile.get(3), bmobfile.get(4), 2, 0, userid,1));
 						}
 						}
 					}
@@ -207,14 +209,35 @@ public class SaleInfo3MainTabFragment extends Fragment
 			}
 		});
 	}
-	private void insertObject(final BmobObject obj) {
+
+	private void insertObject(final GoodsInformation goods) {
 		// TODO 自动生成的方法存根
-		obj.save(getActivity(),new SaveListener() {
+		goods.save(getActivity(),new SaveListener() {
 			
 			@Override
 			public void onSuccess() {
 				// TODO 自动生成的方法存根
 				Toast.makeText(getActivity(), "上传成功", Toast.LENGTH_SHORT).show();
+				Exchange exchange = new Exchange();
+				exchange.setUserid(goods.userid);
+				exchange.setExchangedealtag(1);
+				exchange.setExchangetag(0);
+				exchange.setGoodsid(goods.goodsid);
+				exchange.setExchangeaddress(place);
+				exchange.save(getActivity(), new SaveListener() {
+					
+					@Override
+					public void onSuccess() {
+						// TODO 自动生成的方法存根
+						Log.i("info", "换消息发布成功");
+					}
+					
+					@Override
+					public void onFailure(int arg0, String arg1) {
+						// TODO 自动生成的方法存根
+						Log.i("info", arg0+arg1+"换消息发布失败");
+					}
+				});
 			}
 			
 			@Override
@@ -224,6 +247,7 @@ public class SaleInfo3MainTabFragment extends Fragment
 			}
 		});
 	}
+	
 	private void initView() {
 		// TODO 自动生成的方法存根
 		saleInfo3_editText_goodsname = (EditText) view.findViewById(R.id.saleInfo3_editText_goodsname);

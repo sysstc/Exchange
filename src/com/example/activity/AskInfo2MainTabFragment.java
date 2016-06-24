@@ -90,6 +90,7 @@ public class AskInfo2MainTabFragment extends Fragment{
 				goodsInformation.setGoodsname(goodsname);
 				goodsInformation.setGoodsid(goodsid);
 				goodsInformation.setType(3);
+				goodsInformation.setDealtype(0);
 				goodsInformation.setGoodsclick(0);
 				goodsInformation.setGoodprice(Float.valueOf(price));
 				goodsInformation.setGoodsdescribe(describe);

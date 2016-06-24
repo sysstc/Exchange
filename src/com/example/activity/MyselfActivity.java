@@ -37,7 +37,7 @@ public class MyselfActivity extends BaseActivity{
 	private String username;
 	private String userheadUrl;
 	private LinearLayout myself_menu6;
-	
+	private String userid ;
 	private LinearLayout myself_menu3;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,8 @@ public class MyselfActivity extends BaseActivity{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.myself);
+		userid = String.valueOf(getPreferenceId());
+		Log.i("info", "----------MyselfActivity userid = "+userid);
 		myself_textView_name1 = (TextView) findViewById(R.id.myself_textView_name1);
 		myself_textView_name2 = (TextView) findViewById(R.id.myself_textView_name2);
 		myself_imageView = (ImageView) findViewById(R.id.myself_imageView);
@@ -69,7 +71,8 @@ public class MyselfActivity extends BaseActivity{
 			@Override
 			public void onClick(View v) {
 				// TODO 自动生成的方法存根
-				Intent intent = new Intent(MyselfActivity.this,PublishNewsActivity.class);
+				Intent intent = new Intent(MyselfActivity.this,IssuanceActivity.class);
+				intent.putExtra("userid", userid);
 				startActivity(intent);
 			}
 		});
@@ -150,25 +153,25 @@ public class MyselfActivity extends BaseActivity{
 	
 	public void submit(View v){
 		switch (v.getId()) {
-		case R.id.home_imageButton_home:
+		case R.id.myself_imageButton_home:
 			Intent intent1 = new Intent(this,MainActivity.class);
 			startActivity(intent1);
 			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);
 			finish();
 			break;
-		case R.id.home_imageButton_ask:
+		case R.id.myself_imageButton_ask:
 			Intent intent2 = new Intent(this,AskActivity.class);
 			startActivity(intent2);
 			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);
 			finish();
 			break;
-		case R.id.home_imageButton_sale:
+		case R.id.myself_imageButton_sale:
 			Intent intent3 = new Intent(this,SaleActivity.class);
 			startActivity(intent3);
 			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);
 			finish();
 			break;
-		case R.id.home_imageButton_creat:
+		case R.id.myself_imageButton_create:
 			Intent intent4 = new Intent(this,CreateActivity.class);
 			startActivity(intent4);
 			overridePendingTransition(R.anim.zoomin,R.anim.zoomout);
